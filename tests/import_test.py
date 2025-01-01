@@ -1,2 +1,2 @@
 def test_import():
-    import simforge_template  # noqa: F401
+    import simforge_foundry  # noqa: F401

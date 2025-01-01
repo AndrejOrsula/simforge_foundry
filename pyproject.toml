@@ -7,12 +7,12 @@ plugins = ["pydantic.mypy"]
 follow_imports = "silent"
 
 [project]
-name = "simforge_template"
+name = "simforge_foundry"
 version = "0.0.0"
-description = "SimForge assets"
+description = "Primary collection of SimForge assets"
 authors = [{ name = "Andrej Orsula", email = "orsula.andrej@gmail.com" }]
 maintainers = [{ name = "Andrej Orsula", email = "orsula.andrej@gmail.com" }]
-urls = { Repository = "https://github.com/AndrejOrsula/simforge_template" }
+urls = { Repository = "https://github.com/AndrejOrsula/simforge_foundry" }
 classifiers = [
   "Programming Language :: Python",
   "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
