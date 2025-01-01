@@ -1,0 +1,5 @@
+{
+    "files.associations": {
+        "**/nodes*.py": "plaintext",
+    },
+}
