@@ -23,4 +23,4 @@ keywords = ["simulation", "procedural"]
 readme = "README.md"
 license = { text = "CC0-1.0" }
 requires-python = ">=3.10"
-dependencies = ["simforge[all]"]
+dependencies = ["simforge[bpy]~=0.1"]
