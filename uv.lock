@@ -576,14 +576,26 @@ bpy = [
 
 [[package]]
 name = "simforge-foundry"
-version = "0.0.0"
+version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "simforge" },
+]
+
+[package.optional-dependencies]
+all = [
+    { name = "simforge", extra = ["bpy"] },
+]
+bpy = [
     { name = "simforge", extra = ["bpy"] },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "simforge", extras = ["bpy"], specifier = "~=0.1" }]
+requires-dist = [
+    { name = "simforge", specifier = "~=0.1" },
+    { name = "simforge", extras = ["bpy"], marker = "extra == 'bpy'" },
+    { name = "simforge-foundry", extras = ["bpy"], marker = "extra == 'all'" },
+]
 
 [[package]]
 name = "tomli"
