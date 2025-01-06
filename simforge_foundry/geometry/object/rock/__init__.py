@@ -12,11 +12,11 @@ class RockNodes(BlGeometryNodesModifier):
     )
 
     detail: PositiveInt = 4
-    scale: Tuple[PositiveFloat, PositiveFloat, PositiveFloat] = (0.1, 0.1, 0.075)
+    scale: Tuple[PositiveFloat, PositiveFloat, PositiveFloat] = (0.08, 0.08, 0.04)
     scale_std: Tuple[NonNegativeFloat, NonNegativeFloat, NonNegativeFloat] = (
-        0.01,
-        0.01,
-        0.005,
+        0.008,
+        0.008,
+        0.004,
     )
     horizontal_cut_enable: bool = False
     horizontal_cut_offset: float = 0.0
