@@ -2,7 +2,13 @@ from pathlib import Path
 from typing import List, Tuple
 
 from pydantic import NonNegativeFloat, PositiveFloat, PositiveInt
-from simforge import BlGeometry, BlGeometryNodesModifier, BlMaterial, BlNodesFromPython
+from simforge import (
+    BlGeometry,
+    BlGeometryNodesModifier,
+    BlGeometryOp,
+    BlMaterial,
+    BlNodesFromPython,
+)
 
 
 class RockNodes(BlGeometryNodesModifier):
@@ -24,4 +30,4 @@ class RockNodes(BlGeometryNodesModifier):
 
 
 class RockGeo(BlGeometry):
-    ops: List[BlGeometryNodesModifier] = [RockNodes()]
+    ops: List[BlGeometryOp] = [RockNodes()]

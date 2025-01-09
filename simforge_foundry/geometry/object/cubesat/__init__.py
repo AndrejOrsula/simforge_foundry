@@ -2,7 +2,13 @@ from pathlib import Path
 from typing import List
 
 from pydantic import NonNegativeFloat, PositiveFloat
-from simforge import BlGeometry, BlGeometryNodesModifier, BlMaterial, BlNodesFromPython
+from simforge import (
+    BlGeometry,
+    BlGeometryNodesModifier,
+    BlGeometryOp,
+    BlMaterial,
+    BlNodesFromPython,
+)
 
 from simforge_foundry.material import (
     BrushedChromeMat,
@@ -39,4 +45,4 @@ class CubesatNodes(BlGeometryNodesModifier):
 
 
 class CubesatGeo(BlGeometry):
-    ops: List[BlGeometryNodesModifier] = [CubesatNodes()]
+    ops: List[BlGeometryOp] = [CubesatNodes()]

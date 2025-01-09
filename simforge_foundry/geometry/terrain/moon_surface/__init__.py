@@ -2,7 +2,13 @@ from pathlib import Path
 from typing import List, Tuple
 
 from pydantic import NonNegativeFloat, PositiveFloat
-from simforge import BlGeometry, BlGeometryNodesModifier, BlMaterial, BlNodesFromPython
+from simforge import (
+    BlGeometry,
+    BlGeometryNodesModifier,
+    BlGeometryOp,
+    BlMaterial,
+    BlNodesFromPython,
+)
 
 
 class MoonSurfaceNodes(BlGeometryNodesModifier):
@@ -19,4 +25,4 @@ class MoonSurfaceNodes(BlGeometryNodesModifier):
 
 
 class MoonSurfaceGeo(BlGeometry):
-    ops: List[BlGeometryNodesModifier] = [MoonSurfaceNodes()]
+    ops: List[BlGeometryOp] = [MoonSurfaceNodes()]

@@ -3,7 +3,13 @@ from pathlib import Path
 from typing import ClassVar, List, Tuple
 
 from pydantic import PositiveFloat, PositiveInt
-from simforge import BlGeometry, BlGeometryNodesModifier, BlNodesFromPython, OpType
+from simforge import (
+    BlGeometry,
+    BlGeometryNodesModifier,
+    BlGeometryOp,
+    BlNodesFromPython,
+    OpType,
+)
 
 
 class ModuleNodes(BlGeometryNodesModifier):
@@ -25,7 +31,7 @@ class ModuleNodes(BlGeometryNodesModifier):
 
 
 class ModuleGeo(BlGeometry):
-    ops: List[BlGeometryNodesModifier] = [ModuleNodes()]
+    ops: List[BlGeometryOp] = [ModuleNodes()]
 
 
 class HoleNodes(BlGeometryNodesModifier):
@@ -60,7 +66,7 @@ class HoleNodes(BlGeometryNodesModifier):
 
 
 class HoleGeo(BlGeometry):
-    ops: List[BlGeometryNodesModifier] = [ModuleNodes(), HoleNodes()]
+    ops: List[BlGeometryOp] = [ModuleNodes(), HoleNodes()]
 
 
 class PegNodes(BlGeometryNodesModifier):
@@ -85,4 +91,4 @@ class PegNodes(BlGeometryNodesModifier):
 
 
 class PegGeo(BlGeometry):
-    ops: List[BlGeometryNodesModifier] = [PegNodes()]
+    ops: List[BlGeometryOp] = [PegNodes()]
