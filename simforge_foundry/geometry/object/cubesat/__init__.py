@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List
 
-from pydantic import NonNegativeFloat, PositiveFloat
+from pydantic import NonNegativeFloat, PositiveFloat, SerializeAsAny
 from simforge import (
     BlGeometry,
     BlGeometryNodesModifier,
@@ -45,4 +45,4 @@ class CubesatNodes(BlGeometryNodesModifier):
 
 
 class CubesatGeo(BlGeometry):
-    ops: List[BlGeometryOp] = [CubesatNodes()]
+    ops: List[SerializeAsAny[BlGeometryOp]] = [CubesatNodes()]

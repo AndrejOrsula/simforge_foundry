@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List, Tuple
 
-from pydantic import NonNegativeFloat, PositiveFloat, PositiveInt
+from pydantic import NonNegativeFloat, PositiveFloat, PositiveInt, SerializeAsAny
 from simforge import (
     BlGeometry,
     BlGeometryNodesModifier,
@@ -30,4 +30,4 @@ class RockNodes(BlGeometryNodesModifier):
 
 
 class RockGeo(BlGeometry):
-    ops: List[BlGeometryOp] = [RockNodes()]
+    ops: List[SerializeAsAny[BlGeometryOp]] = [RockNodes()]

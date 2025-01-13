@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List, Tuple
 
-from pydantic import NonNegativeFloat, PositiveFloat
+from pydantic import NonNegativeFloat, PositiveFloat, SerializeAsAny
 from simforge import (
     BlGeometry,
     BlGeometryNodesModifier,
@@ -25,4 +25,4 @@ class SolarPanelNodes(BlGeometryNodesModifier):
 
 
 class SolarPanelGeo(BlGeometry):
-    ops: List[BlGeometryOp] = [SolarPanelNodes()]
+    ops: List[SerializeAsAny[BlGeometryOp]] = [SolarPanelNodes()]

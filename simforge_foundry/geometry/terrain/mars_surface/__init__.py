@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List, Tuple
 
-from pydantic import NonNegativeFloat, PositiveFloat
+from pydantic import NonNegativeFloat, PositiveFloat, SerializeAsAny
 from simforge import (
     BlGeometry,
     BlGeometryNodesModifier,
@@ -25,4 +25,4 @@ class MarsSurfaceNodes(BlGeometryNodesModifier):
 
 
 class MarsSurfaceGeo(BlGeometry):
-    ops: List[BlGeometryOp] = [MarsSurfaceNodes()]
+    ops: List[SerializeAsAny[BlGeometryOp]] = [MarsSurfaceNodes()]

@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List, Tuple
 
-from pydantic import NonNegativeFloat, PositiveFloat, PositiveInt
+from pydantic import NonNegativeFloat, PositiveFloat, PositiveInt, SerializeAsAny
 from simforge import (
     BlGeometry,
     BlGeometryNodesModifier,
@@ -28,4 +28,4 @@ class AsteroidNodes(BlGeometryNodesModifier):
 
 
 class AsteroidGeo(BlGeometry):
-    ops: List[BlGeometryOp] = [AsteroidNodes()]
+    ops: List[SerializeAsAny[BlGeometryOp]] = [AsteroidNodes()]
