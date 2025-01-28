@@ -8,6 +8,7 @@ from simforge import (
     BlGeometryNodesModifier,
     BlGeometryOp,
     BlNodesFromPython,
+    BlTriangulateModifier,
     OpType,
 )
 
@@ -66,7 +67,11 @@ class HoleNodes(BlGeometryNodesModifier):
 
 
 class HoleGeo(BlGeometry):
-    ops: List[SerializeAsAny[BlGeometryOp]] = [ModuleNodes(), HoleNodes()]
+    ops: List[SerializeAsAny[BlGeometryOp]] = [
+        ModuleNodes(),
+        HoleNodes(),
+        BlTriangulateModifier(),
+    ]
 
 
 class PegNodes(BlGeometryNodesModifier):
