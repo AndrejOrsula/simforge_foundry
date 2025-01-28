@@ -17,7 +17,6 @@ repos:
       - id: check-symlinks
       - id: check-toml
       - id: check-vcs-permalinks
-      - id: check-xml
       - id: check-yaml
       - id: debug-statements
       - id: destroyed-symlinks
@@ -32,11 +31,6 @@ repos:
     rev: 0.7.21
     hooks:
       - id: mdformat
-
-  - repo: https://github.com/lovesegfault/beautysh
-    rev: v6.2.1
-    hooks:
-      - id: beautysh
 
   - repo: https://github.com/astral-sh/uv-pre-commit
     rev: 0.5.13
@@ -55,11 +49,6 @@ repos:
       - id: ruff
         args: [--fix]
       - id: ruff-format
-
-  - repo: https://github.com/hadolint/hadolint
-    rev: v2.13.1-beta
-    hooks:
-      - id: hadolint-docker
 
   - repo: https://github.com/codespell-project/codespell
     rev: v2.3.0
