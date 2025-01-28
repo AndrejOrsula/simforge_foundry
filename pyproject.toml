@@ -8,7 +8,7 @@ follow_imports = "silent"
 
 [project]
 name = "simforge_foundry"
-version = "0.0.0"
+version = "0.1.0"
 description = "Primary collection of SimForge assets"
 authors = [{ name = "Andrej Orsula", email = "orsula.andrej@gmail.com" }]
 maintainers = [{ name = "Andrej Orsula", email = "orsula.andrej@gmail.com" }]
@@ -23,4 +23,12 @@ keywords = ["simulation", "procedural"]
 readme = "README.md"
 license = { text = "CC0-1.0" }
 requires-python = ">=3.10"
-dependencies = ["simforge[all]"]
+dependencies = ["simforge>=0.1,<1.0"]
+
+[project.optional-dependencies]
+all = [
+  ## Generators
+  "simforge_foundry[bpy]",
+]
+## Generators
+bpy = ["simforge[bpy]"]
