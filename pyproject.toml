@@ -6,6 +6,9 @@ build-backend = "hatchling.build"
 plugins = ["pydantic.mypy"]
 follow_imports = "silent"
 
+[tool.pytest.ini_options]
+env = ["SF_MODULES=none"]
+
 [project]
 name = "simforge_foundry"
 version = "0.1.0"
@@ -29,6 +32,10 @@ dependencies = ["simforge>=0.1,<1.0"]
 all = [
   ## Generators
   "simforge_foundry[bpy]",
+  ## Utils
+  "simforge_foundry[test]",
 ]
 ## Generators
 bpy = ["simforge[bpy]"]
+## Utils
+test = ["pytest~=8.0", "pytest-env~=1.0"]
