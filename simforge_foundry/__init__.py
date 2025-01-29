@@ -1,1 +1,58 @@
 import simforge  # noqa: F401
+
+from .geometry import (
+    AsteroidGeo,
+    CubesatGeo,
+    HoleGeo,
+    MarsSurfaceGeo,
+    ModuleGeo,
+    MoonSurfaceGeo,
+    PegGeo,
+    RockGeo,
+    SolarPanelGeo,
+)
+from .material import (
+    AsteroidMat,
+    BrushedChromeMat,
+    MarsRockMat,
+    MarsSurfaceMat,
+    MoonRockMat,
+    MoonSurfaceMat,
+    ScratchedMetalMat,
+    ScratchedPlasticMat,
+    SmoothGoldMat,
+    SmoothMetalMat,
+    SolarCellMat,
+    SolarPanelMat,
+)
+from .model import Asteroid, Cubesat, MarsRock, MarsSurface, MoonRock, MoonSurface
+
+__all__ = (
+    "Asteroid",
+    "AsteroidGeo",
+    "AsteroidMat",
+    "BrushedChromeMat",
+    "Cubesat",
+    "CubesatGeo",
+    "HoleGeo",
+    "MarsRock",
+    "MarsRockMat",
+    "MarsSurface",
+    "MarsSurfaceGeo",
+    "MarsSurfaceMat",
+    "ModuleGeo",
+    "MoonRock",
+    "MoonRockMat",
+    "MoonSurface",
+    "MoonSurfaceGeo",
+    "MoonSurfaceMat",
+    "PegGeo",
+    "RockGeo",
+    "ScratchedMetalMat",
+    "ScratchedPlasticMat",
+    "SmoothGoldMat",
+    "SmoothMetalMat",
+    "SolarCellMat",
+    "SolarPanelGeo",
+    "SolarPanelMat",
+)
