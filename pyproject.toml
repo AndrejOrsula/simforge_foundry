@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [tool.mypy]
 plugins = ["pydantic.mypy"]
-follow_imports = "silent"
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 env = ["SF_MODULES=none"]
@@ -26,7 +26,10 @@ keywords = ["simulation", "procedural"]
 readme = "README.md"
 license = { text = "CC0-1.0" }
 requires-python = ">=3.10"
-dependencies = ["simforge>=0.1,<1.0"]
+dependencies = [
+  #
+  "simforge>=0.1,<1.0",
+]
 
 [project.optional-dependencies]
 all = [
@@ -36,6 +39,13 @@ all = [
   "simforge_foundry[test]",
 ]
 ## Generators
-bpy = ["simforge[bpy]"]
+bpy = [
+  #
+  "simforge[bpy]",
+]
 ## Utils
-test = ["pytest~=8.0", "pytest-env~=1.0"]
+test = [
+  #
+  "pytest~=8.0",
+  "pytest-env~=1.0",
+]
