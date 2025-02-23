@@ -2,7 +2,7 @@ from math import pi
 from pathlib import Path
 from typing import ClassVar, List, Tuple
 
-from pydantic import PositiveFloat, PositiveInt, SerializeAsAny
+from pydantic import NonNegativeFloat, PositiveFloat, PositiveInt, SerializeAsAny
 from simforge import (
     BlGeometry,
     BlGeometryNodesModifier,
@@ -22,7 +22,7 @@ class ModuleNodes(BlGeometryNodesModifier):
     module_centering: bool = True
     module_size: PositiveFloat = 0.15
     module_thickness: PositiveFloat = 0.2
-    module_size_tolerance: PositiveFloat = 0.0
+    module_size_tolerance: NonNegativeFloat = 0.0
     module_count_x: PositiveInt = 1
     module_count_y: PositiveInt = 1
     holes_enable: bool = False
@@ -90,8 +90,8 @@ class PegNodes(BlGeometryNodesModifier):
     height_max: PositiveFloat = 0.08
     aspect_ratio_min: PositiveFloat = 0.25
     aspect_ratio_max: PositiveFloat = 1.0
-    taper_factor_min: PositiveFloat = 0.0
-    taper_factor_max: PositiveFloat = 0.0
+    taper_factor_min: NonNegativeFloat = 0.0
+    taper_factor_max: NonNegativeFloat = 0.0
     use_uniform_geometry: bool = False
 
 
