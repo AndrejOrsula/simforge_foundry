@@ -11,7 +11,7 @@ env = ["SF_MODULES=none"]
 
 [project]
 name = "simforge_foundry"
-version = "0.1.0"
+version = "0.2.0"
 description = "Primary collection of SimForge assets"
 authors = [{ name = "Andrej Orsula", email = "orsula.andrej@gmail.com" }]
 maintainers = [{ name = "Andrej Orsula", email = "orsula.andrej@gmail.com" }]
