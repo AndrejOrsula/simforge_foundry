@@ -17,8 +17,8 @@ class MarsSurfaceNodes(BlGeometryNodesModifier):
         python_file=Path(__file__).parent.joinpath("nodes.py"),
     )
 
-    scale: Tuple[PositiveFloat, PositiveFloat, PositiveFloat] = (10.0, 10.0, 1.0)
-    density: PositiveFloat = 0.05
+    scale: Tuple[PositiveFloat, PositiveFloat, PositiveFloat] = (5.0, 5.0, 0.5)
+    density: PositiveFloat = 0.1
     flat_area_size: NonNegativeFloat = 0.0
     rock_mesh_boolean_enable: bool = False
     mat: BlMaterial | None = None
