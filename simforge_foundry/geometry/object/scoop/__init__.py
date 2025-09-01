@@ -9,6 +9,14 @@ from simforge import (
     BlNodesFromPython,
 )
 
+from simforge_foundry.material import (
+    BrushedChromeMat,
+    RandomMaterialNodes,
+    ScratchedMetalMat,
+    ScratchedPlasticMat,
+    SmoothGoldMat,
+)
+
 
 class ScoopRandomNodes(BlGeometryNodesModifier):
     nodes: BlNodesFromPython = BlNodesFromPython(
@@ -23,4 +31,13 @@ class ScoopRandomNodes(BlGeometryNodesModifier):
 
 
 class ScoopRandomGeo(BlGeometry):
-    ops: List[SerializeAsAny[BlGeometryOp]] = [ScoopRandomNodes()]
+    ops: List[SerializeAsAny[BlGeometryOp]] = [
+        ScoopRandomNodes(),
+        RandomMaterialNodes(
+            mat_count=4,
+            mat0=ScratchedMetalMat(),
+            mat1=ScratchedPlasticMat(),
+            mat2=SmoothGoldMat(),
+            mat3=BrushedChromeMat(),
+        ),
+    ]
