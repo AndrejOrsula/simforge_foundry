@@ -9,6 +9,7 @@ from .geometry import (
     MoonSurfaceGeo,
     PegGeo,
     RockGeo,
+    ScoopRandomGeo,
     SolarPanelGeo,
 )
 from .material import (
@@ -25,7 +26,15 @@ from .material import (
     SolarCellMat,
     SolarPanelMat,
 )
-from .model import Asteroid, Cubesat, MarsRock, MarsSurface, MoonRock, MoonSurface
+from .model import (
+    Asteroid,
+    Cubesat,
+    MarsRock,
+    MarsSurface,
+    MoonRock,
+    MoonSurface,
+    ScoopRandom,
+)
 
 __all__ = (
     "Asteroid",
@@ -48,6 +57,8 @@ __all__ = (
     "MoonSurfaceMat",
     "PegGeo",
     "RockGeo",
+    "ScoopRandom",
+    "ScoopRandomGeo",
     "ScratchedMetalMat",
     "ScratchedPlasticMat",
     "SmoothGoldMat",
