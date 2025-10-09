@@ -1,211 +1,199 @@
 import bpy
 
-def random__uniform__002_node_group():
-    random__uniform__002 = bpy.data.node_groups.new(type = 'GeometryNodeTree', name = "Random (Uniform).002")
-    random__uniform__002.color_tag = 'NONE'
-    random__uniform__002.default_group_node_width = 140
-    value_socket = random__uniform__002.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
+def random__uniform__node_group():
+    random__uniform_ = bpy.data.node_groups.new(type = 'GeometryNodeTree', name = "Random (Uniform)")
+    random__uniform_.color_tag = 'NONE'
+    random__uniform_.default_group_node_width = 140
+    value_socket = random__uniform_.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
     value_socket.default_value = 0.0
     value_socket.min_value = -3.4028234663852886e+38
     value_socket.max_value = 3.4028234663852886e+38
     value_socket.subtype = 'NONE'
     value_socket.attribute_domain = 'POINT'
-    min_socket = random__uniform__002.interface.new_socket(name = "Min", in_out='INPUT', socket_type = 'NodeSocketFloat')
+    min_socket = random__uniform_.interface.new_socket(name = "Min", in_out='INPUT', socket_type = 'NodeSocketFloat')
     min_socket.default_value = 0.0
     min_socket.min_value = -3.4028234663852886e+38
     min_socket.max_value = 3.4028234663852886e+38
     min_socket.subtype = 'NONE'
     min_socket.attribute_domain = 'POINT'
-    max_socket = random__uniform__002.interface.new_socket(name = "Max", in_out='INPUT', socket_type = 'NodeSocketFloat')
+    max_socket = random__uniform_.interface.new_socket(name = "Max", in_out='INPUT', socket_type = 'NodeSocketFloat')
     max_socket.default_value = 1.0
     max_socket.min_value = -3.4028234663852886e+38
     max_socket.max_value = 3.4028234663852886e+38
     max_socket.subtype = 'NONE'
     max_socket.attribute_domain = 'POINT'
-    seed_socket = random__uniform__002.interface.new_socket(name = "Seed", in_out='INPUT', socket_type = 'NodeSocketInt')
+    seed_socket = random__uniform_.interface.new_socket(name = "Seed", in_out='INPUT', socket_type = 'NodeSocketInt')
     seed_socket.default_value = 0
     seed_socket.min_value = -2147483648
     seed_socket.max_value = 2147483647
     seed_socket.subtype = 'NONE'
     seed_socket.attribute_domain = 'POINT'
     seed_socket.hide_value = True
-    offset_socket = random__uniform__002.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
+    offset_socket = random__uniform_.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
     offset_socket.default_value = 0
     offset_socket.min_value = 0
     offset_socket.max_value = 2147483647
     offset_socket.subtype = 'NONE'
     offset_socket.attribute_domain = 'POINT'
-    group_output = random__uniform__002.nodes.new("NodeGroupOutput")
+    group_output = random__uniform_.nodes.new("NodeGroupOutput")
     group_output.name = "Group Output"
     group_output.is_active_output = True
-    group_input = random__uniform__002.nodes.new("NodeGroupInput")
+    group_input = random__uniform_.nodes.new("NodeGroupInput")
     group_input.name = "Group Input"
-    random_value_011 = random__uniform__002.nodes.new("FunctionNodeRandomValue")
+    random_value_011 = random__uniform_.nodes.new("FunctionNodeRandomValue")
     random_value_011.name = "Random Value.011"
     random_value_011.data_type = 'FLOAT'
-    group_output.width, group_output.height = 140.0, 100.0
-    group_input.width, group_input.height = 140.0, 100.0
-    random_value_011.width, random_value_011.height = 140.0, 100.0
-    random__uniform__002.links.new(random_value_011.outputs[1], group_output.inputs[0])
-    random__uniform__002.links.new(group_input.outputs[0], random_value_011.inputs[2])
-    random__uniform__002.links.new(group_input.outputs[1], random_value_011.inputs[3])
-    random__uniform__002.links.new(group_input.outputs[3], random_value_011.inputs[7])
-    random__uniform__002.links.new(group_input.outputs[2], random_value_011.inputs[8])
-    return random__uniform__002
+    random__uniform_.links.new(random_value_011.outputs[1], group_output.inputs[0])
+    random__uniform_.links.new(group_input.outputs[0], random_value_011.inputs[2])
+    random__uniform_.links.new(group_input.outputs[1], random_value_011.inputs[3])
+    random__uniform_.links.new(group_input.outputs[3], random_value_011.inputs[7])
+    random__uniform_.links.new(group_input.outputs[2], random_value_011.inputs[8])
+    return random__uniform_
 
-random__uniform__002 = random__uniform__002_node_group()
+random__uniform_ = random__uniform__node_group()
 
-def random__normal__002_node_group():
-    random__normal__002 = bpy.data.node_groups.new(type = 'GeometryNodeTree', name = "Random (Normal).002")
-    random__normal__002.color_tag = 'NONE'
-    random__normal__002.default_group_node_width = 140
-    value_socket_1 = random__normal__002.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
+def random__normal__node_group():
+    random__normal_ = bpy.data.node_groups.new(type = 'GeometryNodeTree', name = "Random (Normal)")
+    random__normal_.color_tag = 'NONE'
+    random__normal_.default_group_node_width = 140
+    value_socket_1 = random__normal_.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
     value_socket_1.default_value = 0.0
     value_socket_1.min_value = -3.4028234663852886e+38
     value_socket_1.max_value = 3.4028234663852886e+38
     value_socket_1.subtype = 'NONE'
     value_socket_1.attribute_domain = 'POINT'
-    non_negative_socket = random__normal__002.interface.new_socket(name = "Non-Negative", in_out='INPUT', socket_type = 'NodeSocketBool')
+    non_negative_socket = random__normal_.interface.new_socket(name = "Non-Negative", in_out='INPUT', socket_type = 'NodeSocketBool')
     non_negative_socket.default_value = True
     non_negative_socket.attribute_domain = 'POINT'
-    mean_socket = random__normal__002.interface.new_socket(name = "Mean", in_out='INPUT', socket_type = 'NodeSocketFloat')
+    mean_socket = random__normal_.interface.new_socket(name = "Mean", in_out='INPUT', socket_type = 'NodeSocketFloat')
     mean_socket.default_value = 0.0
     mean_socket.min_value = -3.4028234663852886e+38
     mean_socket.max_value = 3.4028234663852886e+38
     mean_socket.subtype = 'NONE'
     mean_socket.attribute_domain = 'POINT'
-    std__dev__socket = random__normal__002.interface.new_socket(name = "Std. Dev.", in_out='INPUT', socket_type = 'NodeSocketFloat')
+    std__dev__socket = random__normal_.interface.new_socket(name = "Std. Dev.", in_out='INPUT', socket_type = 'NodeSocketFloat')
     std__dev__socket.default_value = 1.0
     std__dev__socket.min_value = 0.0
     std__dev__socket.max_value = 3.4028234663852886e+38
     std__dev__socket.subtype = 'NONE'
     std__dev__socket.attribute_domain = 'POINT'
-    seed_socket_1 = random__normal__002.interface.new_socket(name = "Seed", in_out='INPUT', socket_type = 'NodeSocketInt')
+    seed_socket_1 = random__normal_.interface.new_socket(name = "Seed", in_out='INPUT', socket_type = 'NodeSocketInt')
     seed_socket_1.default_value = 0
     seed_socket_1.min_value = 0
     seed_socket_1.max_value = 2147483647
     seed_socket_1.subtype = 'NONE'
     seed_socket_1.attribute_domain = 'POINT'
     seed_socket_1.hide_value = True
-    offset_socket_1 = random__normal__002.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
+    offset_socket_1 = random__normal_.interface.new_socket(name = "Offset", in_out='INPUT', socket_type = 'NodeSocketInt')
     offset_socket_1.default_value = 0
     offset_socket_1.min_value = 0
     offset_socket_1.max_value = 2147483647
     offset_socket_1.subtype = 'NONE'
     offset_socket_1.attribute_domain = 'POINT'
-    frame = random__normal__002.nodes.new("NodeFrame")
+    frame = random__normal_.nodes.new("NodeFrame")
     frame.name = "Frame"
-    frame_003 = random__normal__002.nodes.new("NodeFrame")
+    frame_003 = random__normal_.nodes.new("NodeFrame")
     frame_003.name = "Frame.003"
-    frame_001 = random__normal__002.nodes.new("NodeFrame")
+    frame_001 = random__normal_.nodes.new("NodeFrame")
     frame_001.name = "Frame.001"
-    math_002 = random__normal__002.nodes.new("ShaderNodeMath")
+    math_002 = random__normal_.nodes.new("ShaderNodeMath")
     math_002.name = "Math.002"
     math_002.operation = 'MULTIPLY'
     math_002.use_clamp = False
     math_002.inputs[1].default_value = 6.2831854820251465
-    random_value_001 = random__normal__002.nodes.new("FunctionNodeRandomValue")
+    random_value_001 = random__normal_.nodes.new("FunctionNodeRandomValue")
     random_value_001.name = "Random Value.001"
     random_value_001.data_type = 'FLOAT'
     random_value_001.inputs[2].default_value = 0.0
     random_value_001.inputs[3].default_value = 1.0
-    math_010 = random__normal__002.nodes.new("ShaderNodeMath")
+    math_010 = random__normal_.nodes.new("ShaderNodeMath")
     math_010.name = "Math.010"
     math_010.operation = 'ADD'
     math_010.use_clamp = False
     math_010.inputs[1].hide = True
     math_010.inputs[2].hide = True
     math_010.inputs[1].default_value = 1.0
-    math_005 = random__normal__002.nodes.new("ShaderNodeMath")
+    math_005 = random__normal_.nodes.new("ShaderNodeMath")
     math_005.name = "Math.005"
     math_005.operation = 'MULTIPLY'
     math_005.use_clamp = False
-    math_004 = random__normal__002.nodes.new("ShaderNodeMath")
+    math_004 = random__normal_.nodes.new("ShaderNodeMath")
     math_004.name = "Math.004"
     math_004.operation = 'COSINE'
     math_004.use_clamp = False
-    math_008 = random__normal__002.nodes.new("ShaderNodeMath")
+    math_008 = random__normal_.nodes.new("ShaderNodeMath")
     math_008.name = "Math.008"
     math_008.operation = 'MULTIPLY'
     math_008.use_clamp = False
-    math_007 = random__normal__002.nodes.new("ShaderNodeMath")
+    math_007 = random__normal_.nodes.new("ShaderNodeMath")
     math_007.name = "Math.007"
     math_007.operation = 'ADD'
     math_007.use_clamp = False
-    math = random__normal__002.nodes.new("ShaderNodeMath")
+    math = random__normal_.nodes.new("ShaderNodeMath")
     math.name = "Math"
     math.operation = 'LOGARITHM'
     math.use_clamp = False
     math.inputs[1].default_value = 2.7182817459106445
-    random_value_002 = random__normal__002.nodes.new("FunctionNodeRandomValue")
+    random_value_002 = random__normal_.nodes.new("FunctionNodeRandomValue")
     random_value_002.name = "Random Value.002"
     random_value_002.data_type = 'FLOAT'
     random_value_002.inputs[2].default_value = 0.0
     random_value_002.inputs[3].default_value = 1.0
-    math_001 = random__normal__002.nodes.new("ShaderNodeMath")
+    math_001 = random__normal_.nodes.new("ShaderNodeMath")
     math_001.name = "Math.001"
     math_001.operation = 'MULTIPLY'
     math_001.use_clamp = False
     math_001.inputs[1].default_value = -2.0
-    math_003 = random__normal__002.nodes.new("ShaderNodeMath")
+    math_003 = random__normal_.nodes.new("ShaderNodeMath")
     math_003.name = "Math.003"
     math_003.operation = 'SQRT'
     math_003.use_clamp = False
-    group_output_1 = random__normal__002.nodes.new("NodeGroupOutput")
+    group_output_1 = random__normal_.nodes.new("NodeGroupOutput")
     group_output_1.name = "Group Output"
     group_output_1.is_active_output = True
-    group_input_1 = random__normal__002.nodes.new("NodeGroupInput")
+    group_input_1 = random__normal_.nodes.new("NodeGroupInput")
     group_input_1.name = "Group Input"
-    switch = random__normal__002.nodes.new("GeometryNodeSwitch")
+    switch = random__normal_.nodes.new("GeometryNodeSwitch")
     switch.name = "Switch"
     switch.input_type = 'FLOAT'
-    math_006 = random__normal__002.nodes.new("ShaderNodeMath")
+    math_006 = random__normal_.nodes.new("ShaderNodeMath")
     math_006.name = "Math.006"
     math_006.operation = 'MAXIMUM'
     math_006.use_clamp = False
     math_006.inputs[1].default_value = 0.0
-    frame.width, frame.height = 150.0, 100.0
-    frame_003.width, frame_003.height = 150.0, 100.0
-    frame_001.width, frame_001.height = 150.0, 100.0
-    math_002.width, math_002.height = 140.0, 100.0
-    random_value_001.width, random_value_001.height = 140.0, 100.0
-    math_010.width, math_010.height = 140.0, 100.0
-    math_005.width, math_005.height = 140.0, 100.0
-    math_004.width, math_004.height = 140.0, 100.0
-    math_008.width, math_008.height = 140.0, 100.0
-    math_007.width, math_007.height = 140.0, 100.0
-    math.width, math.height = 140.0, 100.0
-    random_value_002.width, random_value_002.height = 140.0, 100.0
-    math_001.width, math_001.height = 140.0, 100.0
-    math_003.width, math_003.height = 140.0, 100.0
-    group_output_1.width, group_output_1.height = 140.0, 100.0
-    group_input_1.width, group_input_1.height = 140.0, 100.0
-    switch.width, switch.height = 140.0, 100.0
-    math_006.width, math_006.height = 140.0, 100.0
-    random__normal__002.links.new(random_value_002.outputs[1], math.inputs[0])
-    random__normal__002.links.new(math.outputs[0], math_001.inputs[0])
-    random__normal__002.links.new(random_value_001.outputs[1], math_002.inputs[0])
-    random__normal__002.links.new(math_002.outputs[0], math_004.inputs[0])
-    random__normal__002.links.new(math_003.outputs[0], math_005.inputs[0])
-    random__normal__002.links.new(group_input_1.outputs[3], random_value_002.inputs[8])
-    random__normal__002.links.new(group_input_1.outputs[3], math_010.inputs[0])
-    random__normal__002.links.new(math_010.outputs[0], random_value_001.inputs[8])
-    random__normal__002.links.new(group_input_1.outputs[2], math_008.inputs[0])
-    random__normal__002.links.new(group_input_1.outputs[1], math_007.inputs[0])
-    random__normal__002.links.new(math_008.outputs[0], math_007.inputs[1])
-    random__normal__002.links.new(math_005.outputs[0], math_008.inputs[1])
-    random__normal__002.links.new(math_004.outputs[0], math_005.inputs[1])
-    random__normal__002.links.new(math_001.outputs[0], math_003.inputs[0])
-    random__normal__002.links.new(group_input_1.outputs[4], random_value_001.inputs[7])
-    random__normal__002.links.new(group_input_1.outputs[4], random_value_002.inputs[7])
-    random__normal__002.links.new(group_input_1.outputs[0], switch.inputs[0])
-    random__normal__002.links.new(math_007.outputs[0], math_006.inputs[0])
-    random__normal__002.links.new(switch.outputs[0], group_output_1.inputs[0])
-    random__normal__002.links.new(math_007.outputs[0], switch.inputs[1])
-    random__normal__002.links.new(math_006.outputs[0], switch.inputs[2])
-    return random__normal__002
+    math_002.parent = frame
+    random_value_001.parent = frame
+    math_010.parent = frame
+    math_005.parent = frame_003
+    math_004.parent = frame_003
+    math.parent = frame_001
+    random_value_002.parent = frame_001
+    math_001.parent = frame_001
+    math_003.parent = frame_001
+    random__normal_.links.new(random_value_002.outputs[1], math.inputs[0])
+    random__normal_.links.new(math.outputs[0], math_001.inputs[0])
+    random__normal_.links.new(random_value_001.outputs[1], math_002.inputs[0])
+    random__normal_.links.new(math_002.outputs[0], math_004.inputs[0])
+    random__normal_.links.new(math_003.outputs[0], math_005.inputs[0])
+    random__normal_.links.new(group_input_1.outputs[3], random_value_002.inputs[8])
+    random__normal_.links.new(group_input_1.outputs[3], math_010.inputs[0])
+    random__normal_.links.new(math_010.outputs[0], random_value_001.inputs[8])
+    random__normal_.links.new(group_input_1.outputs[2], math_008.inputs[0])
+    random__normal_.links.new(group_input_1.outputs[1], math_007.inputs[0])
+    random__normal_.links.new(math_008.outputs[0], math_007.inputs[1])
+    random__normal_.links.new(math_005.outputs[0], math_008.inputs[1])
+    random__normal_.links.new(math_004.outputs[0], math_005.inputs[1])
+    random__normal_.links.new(math_001.outputs[0], math_003.inputs[0])
+    random__normal_.links.new(group_input_1.outputs[4], random_value_001.inputs[7])
+    random__normal_.links.new(group_input_1.outputs[4], random_value_002.inputs[7])
+    random__normal_.links.new(group_input_1.outputs[0], switch.inputs[0])
+    random__normal_.links.new(math_007.outputs[0], math_006.inputs[0])
+    random__normal_.links.new(switch.outputs[0], group_output_1.inputs[0])
+    random__normal_.links.new(math_007.outputs[0], switch.inputs[1])
+    random__normal_.links.new(math_006.outputs[0], switch.inputs[2])
+    return random__normal_
 
-random__normal__002 = random__normal__002_node_group()
+random__normal_ = random__normal__node_group()
 
 def lunarrock_node_group():
     lunarrock = bpy.data.node_groups.new(type = 'GeometryNodeTree', name = "LunarRock")
@@ -261,6 +249,8 @@ def lunarrock_node_group():
     set_material = lunarrock.nodes.new("GeometryNodeSetMaterial")
     set_material.name = "Set Material"
     set_material.inputs[1].default_value = True
+    if "MoonRockMat" in bpy.data.materials:
+        set_material.inputs[2].default_value = bpy.data.materials["MoonRockMat"]
     cube = lunarrock.nodes.new("GeometryNodeMeshCube")
     cube.name = "Cube"
     cube.inputs[0].default_value = (1.0, 1.0, 1.0)
@@ -371,27 +361,27 @@ def lunarrock_node_group():
     vector_math_004.inputs[3].default_value = -0.5
     group = lunarrock.nodes.new("GeometryNodeGroup")
     group.name = "Group"
-    group.node_tree = random__normal__002
+    group.node_tree = random__normal_
     group.inputs[0].default_value = True
     group.inputs[1].default_value = 2.25
     group.inputs[2].default_value = 0.3333333432674408
     group.inputs[4].default_value = 9799
     group_001 = lunarrock.nodes.new("GeometryNodeGroup")
     group_001.name = "Group.001"
-    group_001.node_tree = random__uniform__002
+    group_001.node_tree = random__uniform_
     group_001.inputs[0].default_value = -100000000.0
     group_001.inputs[1].default_value = 1000000000.0
     group_001.inputs[3].default_value = 10074
     group_002 = lunarrock.nodes.new("GeometryNodeGroup")
     group_002.name = "Group.002"
-    group_002.node_tree = random__normal__002
+    group_002.node_tree = random__normal_
     group_002.inputs[0].default_value = True
     group_002.inputs[1].default_value = 1.0
     group_002.inputs[2].default_value = 0.25
     group_002.inputs[4].default_value = 8856
     group_004 = lunarrock.nodes.new("GeometryNodeGroup")
     group_004.name = "Group.004"
-    group_004.node_tree = random__normal__002
+    group_004.node_tree = random__normal_
     group_004.inputs[0].default_value = True
     group_004.inputs[1].default_value = 1.25
     group_004.inputs[2].default_value = 0.25
@@ -420,7 +410,7 @@ def lunarrock_node_group():
     float_curve.inputs[0].default_value = 1.0
     group_005 = lunarrock.nodes.new("GeometryNodeGroup")
     group_005.name = "Group.005"
-    group_005.node_tree = random__normal__002
+    group_005.node_tree = random__normal_
     group_005.inputs[0].default_value = True
     group_005.inputs[1].default_value = 0.25
     group_005.inputs[2].default_value = 0.10000000149011612
@@ -430,14 +420,14 @@ def lunarrock_node_group():
     reroute_005.socket_idname = "NodeSocketFloat"
     group_003 = lunarrock.nodes.new("GeometryNodeGroup")
     group_003.name = "Group.003"
-    group_003.node_tree = random__normal__002
+    group_003.node_tree = random__normal_
     group_003.inputs[0].default_value = True
     group_003.inputs[1].default_value = 0.15000000596046448
     group_003.inputs[2].default_value = 0.02500000037252903
     group_003.inputs[4].default_value = 21973
     group_006 = lunarrock.nodes.new("GeometryNodeGroup")
     group_006.name = "Group.006"
-    group_006.node_tree = random__normal__002
+    group_006.node_tree = random__normal_
     group_006.inputs[0].default_value = True
     group_006.inputs[1].default_value = 0.20000000298023224
     group_006.inputs[2].default_value = 0.05000000074505806
@@ -450,34 +440,34 @@ def lunarrock_node_group():
     reroute.socket_idname = "NodeSocketVectorXYZ"
     group_007 = lunarrock.nodes.new("GeometryNodeGroup")
     group_007.name = "Group.007"
-    group_007.node_tree = random__uniform__002
+    group_007.node_tree = random__uniform_
     group_007.inputs[0].default_value = -100000000.0
     group_007.inputs[1].default_value = 1000000000.0
     group_007.inputs[3].default_value = 10781
     group_008 = lunarrock.nodes.new("GeometryNodeGroup")
     group_008.name = "Group.008"
-    group_008.node_tree = random__normal__002
+    group_008.node_tree = random__normal_
     group_008.inputs[0].default_value = True
     group_008.inputs[1].default_value = 0.07500000298023224
     group_008.inputs[2].default_value = 0.02500000037252903
     group_008.inputs[4].default_value = 3267
     group_010 = lunarrock.nodes.new("GeometryNodeGroup")
     group_010.name = "Group.010"
-    group_010.node_tree = random__normal__002
+    group_010.node_tree = random__normal_
     group_010.inputs[0].default_value = True
     group_010.inputs[1].default_value = 0.5600000023841858
     group_010.inputs[2].default_value = 0.019999999552965164
     group_010.inputs[4].default_value = 5038
     group_011 = lunarrock.nodes.new("GeometryNodeGroup")
     group_011.name = "Group.011"
-    group_011.node_tree = random__normal__002
+    group_011.node_tree = random__normal_
     group_011.inputs[0].default_value = True
     group_011.inputs[1].default_value = 2.4000000953674316
     group_011.inputs[2].default_value = 0.20000000298023224
     group_011.inputs[4].default_value = 3147
     group_012 = lunarrock.nodes.new("GeometryNodeGroup")
     group_012.name = "Group.012"
-    group_012.node_tree = random__normal__002
+    group_012.node_tree = random__normal_
     group_012.inputs[0].default_value = True
     group_012.inputs[1].default_value = 0.05000000074505806
     group_012.inputs[2].default_value = 0.009999999776482582
@@ -600,17 +590,17 @@ def lunarrock_node_group():
     combine_xyz_001.name = "Combine XYZ.001"
     group_009 = lunarrock.nodes.new("GeometryNodeGroup")
     group_009.name = "Group.009"
-    group_009.node_tree = random__normal__002
+    group_009.node_tree = random__normal_
     group_009.inputs[0].default_value = True
     group_009.inputs[4].default_value = 31680
     group_013 = lunarrock.nodes.new("GeometryNodeGroup")
     group_013.name = "Group.013"
-    group_013.node_tree = random__normal__002
+    group_013.node_tree = random__normal_
     group_013.inputs[0].default_value = True
     group_013.inputs[4].default_value = 32260
     group_014 = lunarrock.nodes.new("GeometryNodeGroup")
     group_014.name = "Group.014"
-    group_014.node_tree = random__normal__002
+    group_014.node_tree = random__normal_
     group_014.inputs[0].default_value = True
     group_014.inputs[4].default_value = 40590
     reroute_015 = lunarrock.nodes.new("NodeReroute")
@@ -647,89 +637,67 @@ def lunarrock_node_group():
     integer_001 = lunarrock.nodes.new("FunctionNodeInputInt")
     integer_001.name = "Integer.001"
     integer_001.integer = 0
-    group_input_2.width, group_input_2.height = 140.0, 100.0
-    group_output_2.width, group_output_2.height = 140.0, 100.0
-    set_material.width, set_material.height = 140.0, 100.0
-    cube.width, cube.height = 140.0, 100.0
-    subdivision_surface.width, subdivision_surface.height = 150.0, 100.0
-    set_position.width, set_position.height = 140.0, 100.0
-    voronoi_texture.width, voronoi_texture.height = 140.0, 100.0
-    vector_math.width, vector_math.height = 140.0, 100.0
-    position.width, position.height = 140.0, 100.0
-    map_range.width, map_range.height = 140.0, 100.0
-    set_position_001.width, set_position_001.height = 140.0, 100.0
-    vector_math_001.width, vector_math_001.height = 140.0, 100.0
-    position_001.width, position_001.height = 140.0, 100.0
-    noise_texture.width, noise_texture.height = 140.0, 100.0
-    set_shade_smooth.width, set_shade_smooth.height = 140.0, 100.0
-    frame_1.width, frame_1.height = 150.0, 100.0
-    frame_001_1.width, frame_001_1.height = 150.0, 100.0
-    frame_002.width, frame_002.height = 150.0, 100.0
-    reroute_001.width, reroute_001.height = 140.0, 100.0
-    transform_geometry.width, transform_geometry.height = 140.0, 100.0
-    reroute_002.width, reroute_002.height = 140.0, 100.0
-    attribute_statistic.width, attribute_statistic.height = 140.0, 100.0
-    position_002.width, position_002.height = 140.0, 100.0
-    reroute_003.width, reroute_003.height = 140.0, 100.0
-    vector_math_002.width, vector_math_002.height = 140.0, 100.0
-    vector_math_003.width, vector_math_003.height = 140.0, 100.0
-    vector_math_004.width, vector_math_004.height = 140.0, 100.0
-    group.width, group.height = 140.0, 100.0
-    group_001.width, group_001.height = 140.0, 100.0
-    group_002.width, group_002.height = 140.0, 100.0
-    group_004.width, group_004.height = 140.0, 100.0
-    float_curve.width, float_curve.height = 240.0, 100.0
-    group_005.width, group_005.height = 140.0, 100.0
-    reroute_005.width, reroute_005.height = 140.0, 100.0
-    group_003.width, group_003.height = 140.0, 100.0
-    group_006.width, group_006.height = 140.0, 100.0
-    reroute_006.width, reroute_006.height = 140.0, 100.0
-    reroute.width, reroute.height = 140.0, 100.0
-    group_007.width, group_007.height = 140.0, 100.0
-    group_008.width, group_008.height = 140.0, 100.0
-    group_010.width, group_010.height = 140.0, 100.0
-    group_011.width, group_011.height = 140.0, 100.0
-    group_012.width, group_012.height = 140.0, 100.0
-    frame_003_1.width, frame_003_1.height = 150.0, 100.0
-    transform_geometry_001.width, transform_geometry_001.height = 140.0, 100.0
-    random_value.width, random_value.height = 140.0, 100.0
-    integer.width, integer.height = 140.0, 100.0
-    delete_geometry.width, delete_geometry.height = 140.0, 100.0
-    compare.width, compare.height = 140.0, 100.0
-    position_004.width, position_004.height = 140.0, 100.0
-    separate_xyz_001.width, separate_xyz_001.height = 140.0, 100.0
-    normal_001.width, normal_001.height = 140.0, 100.0
-    boolean_math.width, boolean_math.height = 140.0, 100.0
-    separate_xyz_002.width, separate_xyz_002.height = 140.0, 100.0
-    compare_001.width, compare_001.height = 140.0, 100.0
-    mesh_boolean.width, mesh_boolean.height = 140.0, 100.0
-    switch_1.width, switch_1.height = 140.0, 100.0
-    transform_geometry_002.width, transform_geometry_002.height = 140.0, 100.0
-    combine_xyz.width, combine_xyz.height = 140.0, 100.0
-    reroute_010.width, reroute_010.height = 140.0, 100.0
-    cube_001.width, cube_001.height = 140.0, 100.0
-    math_1.width, math_1.height = 140.0, 100.0
-    reroute_004.width, reroute_004.height = 140.0, 100.0
-    frame_004.width, frame_004.height = 150.0, 100.0
-    reroute_012.width, reroute_012.height = 140.0, 100.0
-    reroute_013.width, reroute_013.height = 140.0, 100.0
-    transform_geometry_003.width, transform_geometry_003.height = 140.0, 100.0
-    combine_xyz_001.width, combine_xyz_001.height = 140.0, 100.0
-    group_009.width, group_009.height = 140.0, 100.0
-    group_013.width, group_013.height = 140.0, 100.0
-    group_014.width, group_014.height = 140.0, 100.0
-    reroute_015.width, reroute_015.height = 140.0, 100.0
-    separate_xyz.width, separate_xyz.height = 140.0, 100.0
-    separate_xyz_003.width, separate_xyz_003.height = 140.0, 100.0
-    reroute_017.width, reroute_017.height = 140.0, 100.0
-    reroute_018.width, reroute_018.height = 140.0, 100.0
-    reroute_019.width, reroute_019.height = 140.0, 100.0
-    reroute_020.width, reroute_020.height = 140.0, 100.0
-    reroute_021.width, reroute_021.height = 140.0, 100.0
-    reroute_022.width, reroute_022.height = 140.0, 100.0
-    frame_005.width, frame_005.height = 150.0, 100.0
-    math_001_1.width, math_001_1.height = 140.0, 100.0
-    integer_001.width, integer_001.height = 140.0, 100.0
+    cube.parent = frame_002
+    subdivision_surface.parent = frame_002
+    set_position.parent = frame_1
+    voronoi_texture.parent = frame_1
+    vector_math.parent = frame_1
+    position.parent = frame_1
+    map_range.parent = frame_1
+    set_position_001.parent = frame_001_1
+    vector_math_001.parent = frame_001_1
+    position_001.parent = frame_001_1
+    noise_texture.parent = frame_001_1
+    reroute_001.parent = frame_001_1
+    transform_geometry.parent = frame_003_1
+    reroute_002.parent = frame_002
+    attribute_statistic.parent = frame_003_1
+    position_002.parent = frame_003_1
+    reroute_003.parent = frame_003_1
+    vector_math_002.parent = frame_003_1
+    vector_math_003.parent = frame_003_1
+    vector_math_004.parent = frame_003_1
+    group.parent = frame_1
+    group_001.parent = frame_1
+    group_002.parent = frame_1
+    group_004.parent = frame_1
+    float_curve.parent = frame_1
+    group_005.parent = frame_1
+    reroute_005.parent = frame_1
+    group_003.parent = frame_002
+    group_006.parent = frame_002
+    reroute_006.parent = frame_002
+    group_007.parent = frame_001_1
+    group_008.parent = frame_001_1
+    group_010.parent = frame_001_1
+    group_011.parent = frame_001_1
+    group_012.parent = frame_001_1
+    transform_geometry_001.parent = frame_002
+    random_value.parent = frame_002
+    integer.parent = frame_002
+    delete_geometry.parent = frame_004
+    compare.parent = frame_004
+    position_004.parent = frame_004
+    separate_xyz_001.parent = frame_004
+    normal_001.parent = frame_004
+    boolean_math.parent = frame_004
+    separate_xyz_002.parent = frame_004
+    compare_001.parent = frame_004
+    mesh_boolean.parent = frame_004
+    switch_1.parent = frame_004
+    transform_geometry_002.parent = frame_004
+    combine_xyz.parent = frame_004
+    cube_001.parent = frame_004
+    math_1.parent = frame_004
+    reroute_004.parent = frame_004
+    reroute_012.parent = frame_004
+    transform_geometry_003.parent = frame_005
+    combine_xyz_001.parent = frame_005
+    group_009.parent = frame_005
+    group_013.parent = frame_005
+    group_014.parent = frame_005
+    separate_xyz.parent = frame_005
+    separate_xyz_003.parent = frame_005
     lunarrock.links.new(set_material.outputs[0], group_output_2.inputs[0])
     lunarrock.links.new(set_shade_smooth.outputs[0], set_material.inputs[0])
     lunarrock.links.new(reroute_002.outputs[0], subdivision_surface.inputs[1])
@@ -840,98 +808,100 @@ def lunarrock_node_group():
 
 lunarrock = lunarrock_node_group()
 
-def crater_profile_001_node_group():
-    crater_profile_001 = bpy.data.node_groups.new(type = 'GeometryNodeTree', name = "Crater Profile.001")
-    crater_profile_001.color_tag = 'NONE'
-    crater_profile_001.default_group_node_width = 140
-    value_socket_2 = crater_profile_001.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
+def crater_profile_node_group():
+    crater_profile = bpy.data.node_groups.new(type = 'GeometryNodeTree', name = "Crater Profile")
+    crater_profile.color_tag = 'NONE'
+    crater_profile.default_group_node_width = 140
+    value_socket_2 = crater_profile.interface.new_socket(name = "Value", in_out='OUTPUT', socket_type = 'NodeSocketFloat')
     value_socket_2.default_value = 0.0
     value_socket_2.min_value = -3.4028234663852886e+38
     value_socket_2.max_value = 3.4028234663852886e+38
     value_socket_2.subtype = 'NONE'
     value_socket_2.attribute_domain = 'POINT'
-    value_socket_3 = crater_profile_001.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
+    value_socket_3 = crater_profile.interface.new_socket(name = "Value", in_out='INPUT', socket_type = 'NodeSocketFloat')
     value_socket_3.default_value = 1.0
     value_socket_3.min_value = -3.4028234663852886e+38
     value_socket_3.max_value = 3.4028234663852886e+38
     value_socket_3.subtype = 'NONE'
     value_socket_3.attribute_domain = 'POINT'
-    crater_radius_fraction_socket = crater_profile_001.interface.new_socket(name = "Crater Radius Fraction", in_out='INPUT', socket_type = 'NodeSocketFloat')
+    crater_radius_fraction_socket = crater_profile.interface.new_socket(name = "Crater Radius Fraction", in_out='INPUT', socket_type = 'NodeSocketFloat')
     crater_radius_fraction_socket.default_value = 0.0
     crater_radius_fraction_socket.min_value = 1.0
     crater_radius_fraction_socket.max_value = 3.4028234663852886e+38
     crater_radius_fraction_socket.subtype = 'FACTOR'
     crater_radius_fraction_socket.attribute_domain = 'POINT'
-    max_crater_radius_socket = crater_profile_001.interface.new_socket(name = "Max Crater Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
+    max_crater_radius_socket = crater_profile.interface.new_socket(name = "Max Crater Radius", in_out='INPUT', socket_type = 'NodeSocketFloat')
     max_crater_radius_socket.default_value = 0.0
     max_crater_radius_socket.min_value = -3.4028234663852886e+38
     max_crater_radius_socket.max_value = 3.4028234663852886e+38
     max_crater_radius_socket.subtype = 'NONE'
     max_crater_radius_socket.attribute_domain = 'POINT'
-    seed_socket_3 = crater_profile_001.interface.new_socket(name = "Seed", in_out='INPUT', socket_type = 'NodeSocketInt')
+    seed_socket_3 = crater_profile.interface.new_socket(name = "Seed", in_out='INPUT', socket_type = 'NodeSocketInt')
     seed_socket_3.default_value = 0
     seed_socket_3.min_value = 0
     seed_socket_3.max_value = 2147483647
     seed_socket_3.subtype = 'NONE'
     seed_socket_3.attribute_domain = 'POINT'
     seed_socket_3.force_non_field = True
-    group_output_3 = crater_profile_001.nodes.new("NodeGroupOutput")
+    group_output_3 = crater_profile.nodes.new("NodeGroupOutput")
     group_output_3.name = "Group Output"
     group_output_3.is_active_output = True
-    group_input_3 = crater_profile_001.nodes.new("NodeGroupInput")
+    group_input_3 = crater_profile.nodes.new("NodeGroupInput")
     group_input_3.name = "Group Input"
-    noise_texture_011 = crater_profile_001.nodes.new("ShaderNodeTexNoise")
+    noise_texture_011 = crater_profile.nodes.new("ShaderNodeTexNoise")
     noise_texture_011.name = "Noise Texture.011"
     noise_texture_011.noise_dimensions = '4D'
     noise_texture_011.noise_type = 'FBM'
     noise_texture_011.normalize = True
     noise_texture_011.inputs[0].default_value = (0.0, 0.0, 0.0)
+    noise_texture_011.inputs[2].default_value = 0.05000000074505806
     noise_texture_011.inputs[3].default_value = 15.0
     noise_texture_011.inputs[8].default_value = 0.0
-    group_019 = crater_profile_001.nodes.new("GeometryNodeGroup")
+    group_019 = crater_profile.nodes.new("GeometryNodeGroup")
     group_019.name = "Group.019"
-    group_019.node_tree = random__uniform__002
+    group_019.node_tree = random__uniform_
     group_019.inputs[0].default_value = -100000000.0
     group_019.inputs[1].default_value = 1000000000.0
     group_019.inputs[3].default_value = 46364
-    group_022 = crater_profile_001.nodes.new("GeometryNodeGroup")
+    group_022 = crater_profile.nodes.new("GeometryNodeGroup")
     group_022.name = "Group.022"
-    group_022.node_tree = random__normal__002
+    group_022.node_tree = random__normal_
     group_022.inputs[0].default_value = False
+    group_022.inputs[1].default_value = 0.0
     group_022.inputs[4].default_value = 2808
-    group_023 = crater_profile_001.nodes.new("GeometryNodeGroup")
+    group_023 = crater_profile.nodes.new("GeometryNodeGroup")
     group_023.name = "Group.023"
-    group_023.node_tree = random__normal__002
+    group_023.node_tree = random__normal_
     group_023.inputs[0].default_value = True
-    group_023.inputs[1].default_value = 0.30000001192092896
+    group_023.inputs[1].default_value = 0.10000000149011612
     group_023.inputs[2].default_value = 0.02500000037252903
     group_023.inputs[4].default_value = 8508
-    group_024 = crater_profile_001.nodes.new("GeometryNodeGroup")
+    group_024 = crater_profile.nodes.new("GeometryNodeGroup")
     group_024.name = "Group.024"
-    group_024.node_tree = random__normal__002
+    group_024.node_tree = random__normal_
     group_024.inputs[0].default_value = True
-    group_024.inputs[1].default_value = 2.25
+    group_024.inputs[1].default_value = 1.0
     group_024.inputs[2].default_value = 0.25
     group_024.inputs[4].default_value = 141
-    float_to_integer = crater_profile_001.nodes.new("FunctionNodeFloatToInt")
+    float_to_integer = crater_profile.nodes.new("FunctionNodeFloatToInt")
     float_to_integer.name = "Float to Integer"
     float_to_integer.rounding_mode = 'ROUND'
-    math_001_2 = crater_profile_001.nodes.new("ShaderNodeMath")
+    math_001_2 = crater_profile.nodes.new("ShaderNodeMath")
     math_001_2.name = "Math.001"
     math_001_2.operation = 'MULTIPLY'
     math_001_2.use_clamp = False
     math_001_2.inputs[2].hide = True
-    reroute_002_1 = crater_profile_001.nodes.new("NodeReroute")
+    reroute_002_1 = crater_profile.nodes.new("NodeReroute")
     reroute_002_1.name = "Reroute.002"
     reroute_002_1.socket_idname = "NodeSocketInt"
-    integer_1 = crater_profile_001.nodes.new("FunctionNodeInputInt")
+    integer_1 = crater_profile.nodes.new("FunctionNodeInputInt")
     integer_1.name = "Integer"
     integer_1.integer = 4
-    math_003_1 = crater_profile_001.nodes.new("ShaderNodeMath")
+    math_003_1 = crater_profile.nodes.new("ShaderNodeMath")
     math_003_1.name = "Math.003"
     math_003_1.operation = 'ADD'
     math_003_1.use_clamp = False
-    map_range_1 = crater_profile_001.nodes.new("ShaderNodeMapRange")
+    map_range_1 = crater_profile.nodes.new("ShaderNodeMapRange")
     map_range_1.name = "Map Range"
     map_range_1.clamp = True
     map_range_1.data_type = 'FLOAT'
@@ -939,14 +909,14 @@ def crater_profile_001_node_group():
     map_range_1.inputs[1].default_value = 0.0
     map_range_1.inputs[2].default_value = 1.0
     map_range_1.inputs[3].default_value = 0.0
-    group_1 = crater_profile_001.nodes.new("GeometryNodeGroup")
+    group_1 = crater_profile.nodes.new("GeometryNodeGroup")
     group_1.name = "Group"
-    group_1.node_tree = random__normal__002
+    group_1.node_tree = random__normal_
     group_1.inputs[0].default_value = True
     group_1.inputs[1].default_value = 0.0
     group_1.inputs[2].default_value = 0.25
     group_1.inputs[4].default_value = 24183
-    float_curve_004 = crater_profile_001.nodes.new("ShaderNodeFloatCurve")
+    float_curve_004 = crater_profile.nodes.new("ShaderNodeFloatCurve")
     float_curve_004.name = "Float Curve.004"
     float_curve_004.mapping.extend = 'EXTRAPOLATED'
     float_curve_004.mapping.tone = 'STANDARD'
@@ -976,7 +946,7 @@ def crater_profile_001_node_group():
     float_curve_004_curve_0_point_6.handle_type = 'AUTO'
     float_curve_004.mapping.update()
     float_curve_004.inputs[0].default_value = 1.0
-    float_curve_005 = crater_profile_001.nodes.new("ShaderNodeFloatCurve")
+    float_curve_005 = crater_profile.nodes.new("ShaderNodeFloatCurve")
     float_curve_005.name = "Float Curve.005"
     float_curve_005.mapping.extend = 'EXTRAPOLATED'
     float_curve_005.mapping.tone = 'STANDARD'
@@ -1004,7 +974,7 @@ def crater_profile_001_node_group():
     float_curve_005_curve_0_point_5.handle_type = 'AUTO'
     float_curve_005.mapping.update()
     float_curve_005.inputs[0].default_value = 1.0
-    float_curve_006 = crater_profile_001.nodes.new("ShaderNodeFloatCurve")
+    float_curve_006 = crater_profile.nodes.new("ShaderNodeFloatCurve")
     float_curve_006.name = "Float Curve.006"
     float_curve_006.mapping.extend = 'EXTRAPOLATED'
     float_curve_006.mapping.tone = 'STANDARD'
@@ -1032,7 +1002,7 @@ def crater_profile_001_node_group():
     float_curve_006_curve_0_point_5.handle_type = 'AUTO'
     float_curve_006.mapping.update()
     float_curve_006.inputs[0].default_value = 1.0
-    float_curve_007 = crater_profile_001.nodes.new("ShaderNodeFloatCurve")
+    float_curve_007 = crater_profile.nodes.new("ShaderNodeFloatCurve")
     float_curve_007.name = "Float Curve.007"
     float_curve_007.mapping.extend = 'EXTRAPOLATED'
     float_curve_007.mapping.tone = 'STANDARD'
@@ -1062,14 +1032,15 @@ def crater_profile_001_node_group():
     float_curve_007_curve_0_point_6.handle_type = 'AUTO'
     float_curve_007.mapping.update()
     float_curve_007.inputs[0].default_value = 1.0
-    reroute_003_1 = crater_profile_001.nodes.new("NodeReroute")
+    reroute_003_1 = crater_profile.nodes.new("NodeReroute")
     reroute_003_1.name = "Reroute.003"
     reroute_003_1.socket_idname = "NodeSocketFloat"
-    math_005_1 = crater_profile_001.nodes.new("ShaderNodeMath")
+    math_005_1 = crater_profile.nodes.new("ShaderNodeMath")
     math_005_1.name = "Math.005"
     math_005_1.operation = 'MULTIPLY'
     math_005_1.use_clamp = False
-    index_switch_001 = crater_profile_001.nodes.new("GeometryNodeIndexSwitch")
+    math_005_1.inputs[1].default_value = 0.5
+    index_switch_001 = crater_profile.nodes.new("GeometryNodeIndexSwitch")
     index_switch_001.name = "Index Switch.001"
     index_switch_001.data_type = 'FLOAT'
     index_switch_001.index_switch_items.clear()
@@ -1078,17 +1049,17 @@ def crater_profile_001_node_group():
     index_switch_001.index_switch_items.new()
     index_switch_001.index_switch_items.new()
     index_switch_001.index_switch_items.new()
-    math_2 = crater_profile_001.nodes.new("ShaderNodeMath")
+    math_2 = crater_profile.nodes.new("ShaderNodeMath")
     math_2.name = "Math"
     math_2.operation = 'MULTIPLY'
     math_2.use_clamp = False
-    math_2.inputs[1].default_value = 1.25
-    math_002_1 = crater_profile_001.nodes.new("ShaderNodeMath")
+    math_2.inputs[1].default_value = 0.05000000074505806
+    math_002_1 = crater_profile.nodes.new("ShaderNodeMath")
     math_002_1.name = "Math.002"
     math_002_1.operation = 'MULTIPLY'
     math_002_1.use_clamp = False
     math_002_1.inputs[1].default_value = 0.019999999552965164
-    float_curve_008 = crater_profile_001.nodes.new("ShaderNodeFloatCurve")
+    float_curve_008 = crater_profile.nodes.new("ShaderNodeFloatCurve")
     float_curve_008.name = "Float Curve.008"
     float_curve_008.mapping.extend = 'EXTRAPOLATED'
     float_curve_008.mapping.tone = 'STANDARD'
@@ -1114,75 +1085,48 @@ def crater_profile_001_node_group():
     float_curve_008_curve_0_point_4.handle_type = 'AUTO'
     float_curve_008.mapping.update()
     float_curve_008.inputs[0].default_value = 1.0
-    math_004_1 = crater_profile_001.nodes.new("ShaderNodeMath")
+    math_004_1 = crater_profile.nodes.new("ShaderNodeMath")
     math_004_1.name = "Math.004"
+    math_004_1.mute = True
     math_004_1.operation = 'INVERSE_SQRT'
     math_004_1.use_clamp = False
-    group_output_3.width, group_output_3.height = 140.0, 100.0
-    group_input_3.width, group_input_3.height = 140.0, 100.0
-    noise_texture_011.width, noise_texture_011.height = 140.0, 100.0
-    group_019.width, group_019.height = 140.0, 100.0
-    group_022.width, group_022.height = 140.0, 100.0
-    group_023.width, group_023.height = 140.0, 100.0
-    group_024.width, group_024.height = 140.0, 100.0
-    float_to_integer.width, float_to_integer.height = 140.0, 100.0
-    math_001_2.width, math_001_2.height = 140.0, 100.0
-    reroute_002_1.width, reroute_002_1.height = 140.0, 100.0
-    integer_1.width, integer_1.height = 140.0, 100.0
-    math_003_1.width, math_003_1.height = 140.0, 100.0
-    map_range_1.width, map_range_1.height = 140.0, 100.0
-    group_1.width, group_1.height = 140.0, 100.0
-    float_curve_004.width, float_curve_004.height = 240.0, 100.0
-    float_curve_005.width, float_curve_005.height = 240.0, 100.0
-    float_curve_006.width, float_curve_006.height = 240.0, 100.0
-    float_curve_007.width, float_curve_007.height = 240.0, 100.0
-    reroute_003_1.width, reroute_003_1.height = 140.0, 100.0
-    math_005_1.width, math_005_1.height = 140.0, 100.0
-    index_switch_001.width, index_switch_001.height = 140.0, 100.0
-    math_2.width, math_2.height = 140.0, 100.0
-    math_002_1.width, math_002_1.height = 140.0, 100.0
-    float_curve_008.width, float_curve_008.height = 240.0, 100.0
-    math_004_1.width, math_004_1.height = 140.0, 100.0
-    crater_profile_001.links.new(group_019.outputs[0], noise_texture_011.inputs[1])
-    crater_profile_001.links.new(reroute_002_1.outputs[0], group_019.inputs[2])
-    crater_profile_001.links.new(reroute_002_1.outputs[0], group_022.inputs[3])
-    crater_profile_001.links.new(reroute_002_1.outputs[0], group_023.inputs[3])
-    crater_profile_001.links.new(reroute_002_1.outputs[0], group_024.inputs[3])
-    crater_profile_001.links.new(group_input_3.outputs[1], math_001_2.inputs[0])
-    crater_profile_001.links.new(group_input_3.outputs[2], math_001_2.inputs[1])
-    crater_profile_001.links.new(math_005_1.outputs[0], group_output_3.inputs[0])
-    crater_profile_001.links.new(group_input_3.outputs[3], reroute_002_1.inputs[0])
-    crater_profile_001.links.new(integer_1.outputs[0], map_range_1.inputs[4])
-    crater_profile_001.links.new(map_range_1.outputs[0], float_to_integer.inputs[0])
-    crater_profile_001.links.new(group_input_3.outputs[3], group_1.inputs[3])
-    crater_profile_001.links.new(group_1.outputs[0], math_003_1.inputs[1])
-    crater_profile_001.links.new(math_003_1.outputs[0], map_range_1.inputs[0])
-    crater_profile_001.links.new(group_input_3.outputs[1], math_003_1.inputs[0])
-    crater_profile_001.links.new(group_022.outputs[0], noise_texture_011.inputs[2])
-    crater_profile_001.links.new(group_023.outputs[0], noise_texture_011.inputs[4])
-    crater_profile_001.links.new(group_024.outputs[0], noise_texture_011.inputs[5])
-    crater_profile_001.links.new(reroute_003_1.outputs[0], float_curve_004.inputs[1])
-    crater_profile_001.links.new(reroute_003_1.outputs[0], float_curve_005.inputs[1])
-    crater_profile_001.links.new(reroute_003_1.outputs[0], float_curve_006.inputs[1])
-    crater_profile_001.links.new(reroute_003_1.outputs[0], float_curve_007.inputs[1])
-    crater_profile_001.links.new(group_input_3.outputs[0], reroute_003_1.inputs[0])
-    crater_profile_001.links.new(noise_texture_011.outputs[0], math_005_1.inputs[1])
-    crater_profile_001.links.new(float_curve_007.outputs[0], index_switch_001.inputs[1])
-    crater_profile_001.links.new(float_curve_004.outputs[0], index_switch_001.inputs[2])
-    crater_profile_001.links.new(float_curve_005.outputs[0], index_switch_001.inputs[3])
-    crater_profile_001.links.new(float_curve_006.outputs[0], index_switch_001.inputs[4])
-    crater_profile_001.links.new(index_switch_001.outputs[0], math_005_1.inputs[0])
-    crater_profile_001.links.new(math_004_1.outputs[0], group_022.inputs[1])
-    crater_profile_001.links.new(math_001_2.outputs[0], math_2.inputs[0])
-    crater_profile_001.links.new(math_2.outputs[0], math_002_1.inputs[0])
-    crater_profile_001.links.new(math_002_1.outputs[0], group_022.inputs[2])
-    crater_profile_001.links.new(reroute_003_1.outputs[0], float_curve_008.inputs[1])
-    crater_profile_001.links.new(float_curve_008.outputs[0], index_switch_001.inputs[5])
-    crater_profile_001.links.new(float_to_integer.outputs[0], index_switch_001.inputs[0])
-    crater_profile_001.links.new(math_2.outputs[0], math_004_1.inputs[0])
-    return crater_profile_001
+    crater_profile.links.new(group_019.outputs[0], noise_texture_011.inputs[1])
+    crater_profile.links.new(reroute_002_1.outputs[0], group_019.inputs[2])
+    crater_profile.links.new(reroute_002_1.outputs[0], group_022.inputs[3])
+    crater_profile.links.new(reroute_002_1.outputs[0], group_023.inputs[3])
+    crater_profile.links.new(reroute_002_1.outputs[0], group_024.inputs[3])
+    crater_profile.links.new(group_input_3.outputs[1], math_001_2.inputs[0])
+    crater_profile.links.new(group_input_3.outputs[2], math_001_2.inputs[1])
+    crater_profile.links.new(math_005_1.outputs[0], group_output_3.inputs[0])
+    crater_profile.links.new(group_input_3.outputs[3], reroute_002_1.inputs[0])
+    crater_profile.links.new(integer_1.outputs[0], map_range_1.inputs[4])
+    crater_profile.links.new(map_range_1.outputs[0], float_to_integer.inputs[0])
+    crater_profile.links.new(group_input_3.outputs[3], group_1.inputs[3])
+    crater_profile.links.new(group_1.outputs[0], math_003_1.inputs[1])
+    crater_profile.links.new(math_003_1.outputs[0], map_range_1.inputs[0])
+    crater_profile.links.new(group_input_3.outputs[1], math_003_1.inputs[0])
+    crater_profile.links.new(group_023.outputs[0], noise_texture_011.inputs[4])
+    crater_profile.links.new(group_024.outputs[0], noise_texture_011.inputs[5])
+    crater_profile.links.new(reroute_003_1.outputs[0], float_curve_004.inputs[1])
+    crater_profile.links.new(reroute_003_1.outputs[0], float_curve_005.inputs[1])
+    crater_profile.links.new(reroute_003_1.outputs[0], float_curve_006.inputs[1])
+    crater_profile.links.new(reroute_003_1.outputs[0], float_curve_007.inputs[1])
+    crater_profile.links.new(group_input_3.outputs[0], reroute_003_1.inputs[0])
+    crater_profile.links.new(float_curve_007.outputs[0], index_switch_001.inputs[1])
+    crater_profile.links.new(float_curve_004.outputs[0], index_switch_001.inputs[2])
+    crater_profile.links.new(float_curve_005.outputs[0], index_switch_001.inputs[3])
+    crater_profile.links.new(float_curve_006.outputs[0], index_switch_001.inputs[4])
+    crater_profile.links.new(index_switch_001.outputs[0], math_005_1.inputs[0])
+    crater_profile.links.new(math_001_2.outputs[0], math_2.inputs[0])
+    crater_profile.links.new(math_2.outputs[0], math_002_1.inputs[0])
+    crater_profile.links.new(math_002_1.outputs[0], group_022.inputs[2])
+    crater_profile.links.new(reroute_003_1.outputs[0], float_curve_008.inputs[1])
+    crater_profile.links.new(float_curve_008.outputs[0], index_switch_001.inputs[5])
+    crater_profile.links.new(float_to_integer.outputs[0], index_switch_001.inputs[0])
+    crater_profile.links.new(math_2.outputs[0], math_004_1.inputs[0])
+    return crater_profile
 
-crater_profile_001 = crater_profile_001_node_group()
+crater_profile = crater_profile_node_group()
 
 def moonsurface_node_group():
     moonsurface = bpy.data.node_groups.new(type = 'GeometryNodeTree', name = "MoonSurface")
@@ -1371,7 +1315,7 @@ def moonsurface_node_group():
     noise_texture_009.inputs[8].default_value = 0.0
     group_013_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_013_1.name = "Group.013"
-    group_013_1.node_tree = random__uniform__002
+    group_013_1.node_tree = random__uniform_
     group_013_1.inputs[0].default_value = -100000000.0
     group_013_1.inputs[1].default_value = 1000000000.0
     group_013_1.inputs[3].default_value = 90878
@@ -1380,28 +1324,28 @@ def moonsurface_node_group():
     reroute_009.socket_idname = "NodeSocketInt"
     group_2 = moonsurface.nodes.new("GeometryNodeGroup")
     group_2.name = "Group"
-    group_2.node_tree = random__normal__002
+    group_2.node_tree = random__normal_
     group_2.inputs[0].default_value = True
     group_2.inputs[1].default_value = 0.15000000596046448
     group_2.inputs[2].default_value = 0.02500000037252903
     group_2.inputs[4].default_value = 53330
     group_014_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_014_1.name = "Group.014"
-    group_014_1.node_tree = random__normal__002
+    group_014_1.node_tree = random__normal_
     group_014_1.inputs[0].default_value = True
     group_014_1.inputs[1].default_value = 4.0
     group_014_1.inputs[2].default_value = 0.20000000298023224
     group_014_1.inputs[4].default_value = 48802
     group_015 = moonsurface.nodes.new("GeometryNodeGroup")
     group_015.name = "Group.015"
-    group_015.node_tree = random__normal__002
+    group_015.node_tree = random__normal_
     group_015.inputs[0].default_value = True
     group_015.inputs[1].default_value = 0.699999988079071
     group_015.inputs[2].default_value = 0.10000000149011612
     group_015.inputs[4].default_value = 99201
     group_016 = moonsurface.nodes.new("GeometryNodeGroup")
     group_016.name = "Group.016"
-    group_016.node_tree = random__normal__002
+    group_016.node_tree = random__normal_
     group_016.inputs[0].default_value = True
     group_016.inputs[1].default_value = 2.200000047683716
     group_016.inputs[2].default_value = 0.07500000298023224
@@ -1418,7 +1362,7 @@ def moonsurface_node_group():
     noise_texture_010.inputs[8].default_value = 0.0
     group_017 = moonsurface.nodes.new("GeometryNodeGroup")
     group_017.name = "Group.017"
-    group_017.node_tree = random__uniform__002
+    group_017.node_tree = random__uniform_
     group_017.inputs[0].default_value = -100000000.0
     group_017.inputs[1].default_value = 1000000000.0
     group_017.inputs[3].default_value = 7859
@@ -1427,21 +1371,21 @@ def moonsurface_node_group():
     reroute_010_1.socket_idname = "NodeSocketInt"
     group_018 = moonsurface.nodes.new("GeometryNodeGroup")
     group_018.name = "Group.018"
-    group_018.node_tree = random__normal__002
+    group_018.node_tree = random__normal_
     group_018.inputs[0].default_value = True
     group_018.inputs[1].default_value = 1.5
     group_018.inputs[2].default_value = 0.25
     group_018.inputs[4].default_value = 543
     group_020 = moonsurface.nodes.new("GeometryNodeGroup")
     group_020.name = "Group.020"
-    group_020.node_tree = random__normal__002
+    group_020.node_tree = random__normal_
     group_020.inputs[0].default_value = True
     group_020.inputs[1].default_value = 0.22499999403953552
     group_020.inputs[2].default_value = 0.02500000037252903
     group_020.inputs[4].default_value = 10032
     group_021 = moonsurface.nodes.new("GeometryNodeGroup")
     group_021.name = "Group.021"
-    group_021.node_tree = random__normal__002
+    group_021.node_tree = random__normal_
     group_021.inputs[0].default_value = True
     group_021.inputs[1].default_value = 3.0
     group_021.inputs[2].default_value = 0.5
@@ -1458,7 +1402,7 @@ def moonsurface_node_group():
     noise_texture_011_1.inputs[8].default_value = 0.0
     group_019_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_019_1.name = "Group.019"
-    group_019_1.node_tree = random__uniform__002
+    group_019_1.node_tree = random__uniform_
     group_019_1.inputs[0].default_value = -100000000.0
     group_019_1.inputs[1].default_value = 1000000000.0
     group_019_1.inputs[3].default_value = 76322
@@ -1467,21 +1411,21 @@ def moonsurface_node_group():
     reroute_011.socket_idname = "NodeSocketInt"
     group_022_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_022_1.name = "Group.022"
-    group_022_1.node_tree = random__normal__002
+    group_022_1.node_tree = random__normal_
     group_022_1.inputs[0].default_value = True
     group_022_1.inputs[1].default_value = 2.0
     group_022_1.inputs[2].default_value = 0.10000000149011612
     group_022_1.inputs[4].default_value = 23556
     group_023_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_023_1.name = "Group.023"
-    group_023_1.node_tree = random__normal__002
+    group_023_1.node_tree = random__normal_
     group_023_1.inputs[0].default_value = True
     group_023_1.inputs[1].default_value = 0.18000000715255737
     group_023_1.inputs[2].default_value = 0.03999999910593033
     group_023_1.inputs[4].default_value = 8479
     group_024_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_024_1.name = "Group.024"
-    group_024_1.node_tree = random__normal__002
+    group_024_1.node_tree = random__normal_
     group_024_1.inputs[0].default_value = True
     group_024_1.inputs[1].default_value = 3.25
     group_024_1.inputs[2].default_value = 0.25
@@ -1490,7 +1434,7 @@ def moonsurface_node_group():
     frame_006.name = "Frame.006"
     group_026 = moonsurface.nodes.new("GeometryNodeGroup")
     group_026.name = "Group.026"
-    group_026.node_tree = random__normal__002
+    group_026.node_tree = random__normal_
     group_026.inputs[0].default_value = True
     group_026.inputs[1].default_value = 0.5
     group_026.inputs[2].default_value = 0.20000000298023224
@@ -1641,28 +1585,28 @@ def moonsurface_node_group():
     reroute_015_1.socket_idname = "NodeSocketFloat"
     group_002_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_002_1.name = "Group.002"
-    group_002_1.node_tree = random__normal__002
+    group_002_1.node_tree = random__normal_
     group_002_1.inputs[0].default_value = True
-    group_002_1.inputs[1].default_value = 0.6000000238418579
+    group_002_1.inputs[1].default_value = 1.0
     group_002_1.inputs[2].default_value = 0.20000000298023224
     group_002_1.inputs[4].default_value = 65241
     group_003_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_003_1.name = "Group.003"
-    group_003_1.node_tree = random__normal__002
+    group_003_1.node_tree = random__normal_
     group_003_1.inputs[0].default_value = True
     group_003_1.inputs[1].default_value = 0.3333333432674408
     group_003_1.inputs[2].default_value = 0.0833333358168602
     group_003_1.inputs[4].default_value = 87654
     group_004_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_004_1.name = "Group.004"
-    group_004_1.node_tree = random__normal__002
+    group_004_1.node_tree = random__normal_
     group_004_1.inputs[0].default_value = True
     group_004_1.inputs[1].default_value = 0.8999999761581421
     group_004_1.inputs[2].default_value = 0.20000000298023224
     group_004_1.inputs[4].default_value = 521
     group_005_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_005_1.name = "Group.005"
-    group_005_1.node_tree = random__normal__002
+    group_005_1.node_tree = random__normal_
     group_005_1.inputs[0].default_value = True
     group_005_1.inputs[1].default_value = 0.75
     group_005_1.inputs[2].default_value = 0.25
@@ -1675,14 +1619,14 @@ def moonsurface_node_group():
     group_001_1.node_tree = lunarrock
     group_001_1.inputs[2].default_value = (1.0, 1.0, 1.0)
     group_001_1.inputs[3].default_value = (0.25, 0.25, 0.10000000149011612)
-    group_001_1.inputs[4].default_value = False
-    group_001_1.inputs[5].default_value = 0.0
+    group_001_1.inputs[4].default_value = True
+    group_001_1.inputs[5].default_value = -0.25
     distribute_points_on_faces = moonsurface.nodes.new("GeometryNodeDistributePointsOnFaces")
     distribute_points_on_faces.name = "Distribute Points on Faces"
     distribute_points_on_faces.distribute_method = 'POISSON'
     distribute_points_on_faces.use_legacy_normal = False
     distribute_points_on_faces.inputs[1].default_value = True
-    distribute_points_on_faces.inputs[3].default_value = 0.5
+    distribute_points_on_faces.inputs[3].default_value = 0.10000000149011612
     repeat_input = moonsurface.nodes.new("GeometryNodeRepeatInput")
     repeat_input.name = "Repeat Input"
     repeat_output = moonsurface.nodes.new("GeometryNodeRepeatOutput")
@@ -1720,7 +1664,7 @@ def moonsurface_node_group():
     transform_geometry_003_1.inputs[3].default_value = (1.0, 1.0, 1.0)
     group_006_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_006_1.name = "Group.006"
-    group_006_1.node_tree = random__uniform__002
+    group_006_1.node_tree = random__uniform_
     group_006_1.inputs[0].default_value = 0.0
     group_006_1.inputs[1].default_value = 100000.0
     group_006_1.inputs[3].default_value = 434
@@ -1739,7 +1683,7 @@ def moonsurface_node_group():
     reroute_019_1.socket_idname = "NodeSocketFloat"
     group_007_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_007_1.name = "Group.007"
-    group_007_1.node_tree = random__uniform__002
+    group_007_1.node_tree = random__uniform_
     group_007_1.inputs[0].default_value = 0.0
     group_007_1.inputs[1].default_value = 1.0
     group_007_1.inputs[3].default_value = 76543
@@ -1756,19 +1700,24 @@ def moonsurface_node_group():
     float_curve_001.mapping.use_clip = True
     float_curve_001_curve_0 = float_curve_001.mapping.curves[0]
     float_curve_001_curve_0_point_0 = float_curve_001_curve_0.points[0]
-    float_curve_001_curve_0_point_0.location = (0.0, 0.019999999552965164)
+    float_curve_001_curve_0_point_0.location = (0.0, 0.01875000074505806)
     float_curve_001_curve_0_point_0.handle_type = 'AUTO_CLAMPED'
     float_curve_001_curve_0_point_1 = float_curve_001_curve_0.points[1]
-    float_curve_001_curve_0_point_1.location = (0.25, 0.019999999552965164)
-    float_curve_001_curve_0_point_1.handle_type = 'AUTO_CLAMPED'
-    float_curve_001_curve_0_point_2 = float_curve_001_curve_0.points.new(0.949999988079071, 0.20000000298023224)
+    float_curve_001_curve_0_point_1.location = (0.3090907037258148, 0.03749999776482582)
+    float_curve_001_curve_0_point_1.handle_type = 'AUTO'
+    float_curve_001_curve_0_point_2 = float_curve_001_curve_0.points.new(0.6181817650794983, 0.04249997437000275)
     float_curve_001_curve_0_point_2.handle_type = 'AUTO_CLAMPED'
-    float_curve_001_curve_0_point_3 = float_curve_001_curve_0.points.new(1.0, 1.0)
+    float_curve_001_curve_0_point_3 = float_curve_001_curve_0.points.new(0.9681816101074219, 0.050000037997961044)
     float_curve_001_curve_0_point_3.handle_type = 'AUTO_CLAMPED'
+    float_curve_001_curve_0_point_4 = float_curve_001_curve_0.points.new(0.9854545593261719, 0.21874994039535522)
+    float_curve_001_curve_0_point_4.handle_type = 'AUTO_CLAMPED'
+    float_curve_001_curve_0_point_5 = float_curve_001_curve_0.points.new(1.0, 1.0)
+    float_curve_001_curve_0_point_5.handle_type = 'AUTO_CLAMPED'
     float_curve_001.mapping.update()
     float_curve_001.inputs[0].default_value = 1.0
     delete_geometry_1 = moonsurface.nodes.new("GeometryNodeDeleteGeometry")
     delete_geometry_1.name = "Delete Geometry"
+    delete_geometry_1.mute = True
     delete_geometry_1.domain = 'POINT'
     delete_geometry_1.mode = 'ALL'
     position_001_1 = moonsurface.nodes.new("GeometryNodeInputPosition")
@@ -1868,21 +1817,21 @@ def moonsurface_node_group():
     compare_003.inputs[1].default_value = 1.0
     group_008_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_008_1.name = "Group.008"
-    group_008_1.node_tree = crater_profile_001
+    group_008_1.node_tree = crater_profile
     math_022 = moonsurface.nodes.new("ShaderNodeMath")
     math_022.name = "Math.022"
     math_022.operation = 'SUBTRACT'
     math_022.use_clamp = False
     group_009_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_009_1.name = "Group.009"
-    group_009_1.node_tree = crater_profile_001
+    group_009_1.node_tree = crater_profile
     group_009_1.inputs[0].default_value = 0.0
     distribute_points_on_faces_001 = moonsurface.nodes.new("GeometryNodeDistributePointsOnFaces")
     distribute_points_on_faces_001.name = "Distribute Points on Faces.001"
     distribute_points_on_faces_001.distribute_method = 'POISSON'
     distribute_points_on_faces_001.use_legacy_normal = True
     distribute_points_on_faces_001.inputs[1].default_value = True
-    distribute_points_on_faces_001.inputs[3].default_value = 10.0
+    distribute_points_on_faces_001.inputs[3].default_value = 5.0
     random_value_1 = moonsurface.nodes.new("FunctionNodeRandomValue")
     random_value_1.name = "Random Value"
     random_value_1.data_type = 'FLOAT'
@@ -1992,10 +1941,10 @@ def moonsurface_node_group():
     float_curve_002.mapping.use_clip = True
     float_curve_002_curve_0 = float_curve_002.mapping.curves[0]
     float_curve_002_curve_0_point_0 = float_curve_002_curve_0.points[0]
-    float_curve_002_curve_0_point_0.location = (0.0, 0.02500000037252903)
+    float_curve_002_curve_0_point_0.location = (0.0, 0.23125004768371582)
     float_curve_002_curve_0_point_0.handle_type = 'AUTO'
     float_curve_002_curve_0_point_1 = float_curve_002_curve_0.points[1]
-    float_curve_002_curve_0_point_1.location = (0.800000011920929, 0.30000001192092896)
+    float_curve_002_curve_0_point_1.location = (0.5454543828964233, 0.42750006914138794)
     float_curve_002_curve_0_point_1.handle_type = 'AUTO'
     float_curve_002_curve_0_point_2 = float_curve_002_curve_0.points.new(1.0, 1.0)
     float_curve_002_curve_0_point_2.handle_type = 'AUTO'
@@ -2094,9 +2043,9 @@ def moonsurface_node_group():
     math_026.use_clamp = False
     group_010_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_010_1.name = "Group.010"
-    group_010_1.node_tree = random__normal__002
+    group_010_1.node_tree = random__normal_
     group_010_1.inputs[0].default_value = True
-    group_010_1.inputs[1].default_value = 0.10000000149011612
+    group_010_1.inputs[1].default_value = 0.05000000074505806
     group_010_1.inputs[2].default_value = 0.02500000037252903
     group_010_1.inputs[3].default_value = 0
     group_010_1.inputs[4].default_value = 87702
@@ -2113,7 +2062,7 @@ def moonsurface_node_group():
     math_028.inputs[1].default_value = 0.125
     group_011_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_011_1.name = "Group.011"
-    group_011_1.node_tree = random__normal__002
+    group_011_1.node_tree = random__normal_
     group_011_1.inputs[0].default_value = True
     group_011_1.inputs[1].default_value = 0.75
     group_011_1.inputs[2].default_value = 0.125
@@ -2163,7 +2112,7 @@ def moonsurface_node_group():
     vector_math_006.operation = 'SCALE'
     group_012_1 = moonsurface.nodes.new("GeometryNodeGroup")
     group_012_1.name = "Group.012"
-    group_012_1.node_tree = random__uniform__002
+    group_012_1.node_tree = random__uniform_
     group_012_1.inputs[0].default_value = 0.07500000298023224
     group_012_1.inputs[1].default_value = 0.25
     group_012_1.inputs[3].default_value = 214126
@@ -2184,7 +2133,7 @@ def moonsurface_node_group():
     math_030.inputs[1].default_value = 0.5
     float_to_integer_001 = moonsurface.nodes.new("FunctionNodeFloatToInt")
     float_to_integer_001.name = "Float to Integer.001"
-    float_to_integer_001.rounding_mode = 'FLOOR'
+    float_to_integer_001.rounding_mode = 'CEILING'
     mesh_boolean_1 = moonsurface.nodes.new("GeometryNodeMeshBoolean")
     mesh_boolean_1.name = "Mesh Boolean"
     mesh_boolean_1.operation = 'UNION'
@@ -2205,236 +2154,223 @@ def moonsurface_node_group():
     reroute_041.socket_idname = "NodeSocketBool"
     value = moonsurface.nodes.new("ShaderNodeValue")
     value.name = "Value"
-    value.outputs[0].default_value = 2.0
+    value.outputs[0].default_value = 15.0
     reroute_042 = moonsurface.nodes.new("NodeReroute")
     reroute_042.name = "Reroute.042"
     reroute_042.socket_idname = "NodeSocketMaterial"
     reroute_043 = moonsurface.nodes.new("NodeReroute")
     reroute_043.name = "Reroute.043"
     reroute_043.socket_idname = "NodeSocketMaterial"
+    viewer = moonsurface.nodes.new("GeometryNodeViewer")
+    viewer.name = "Viewer"
+    viewer.data_type = 'FLOAT'
+    viewer.domain = 'AUTO'
+    viewer.inputs[1].default_value = 0.0
+    math_031 = moonsurface.nodes.new("ShaderNodeMath")
+    math_031.name = "Math.031"
+    math_031.operation = 'ADD'
+    math_031.use_clamp = False
+    math_031.inputs[1].default_value = 1.0
     repeat_input.pair_with_output(repeat_output)
     repeat_input.inputs[2].default_value = 0
-    group_input_4.width, group_input_4.height = 140.0, 100.0
-    group_output_4.width, group_output_4.height = 140.0, 100.0
-    grid.width, grid.height = 140.0, 100.0
-    set_material_1.width, set_material_1.height = 140.0, 100.0
-    set_shade_smooth_1.width, set_shade_smooth_1.height = 140.0, 100.0
-    vector_math_012.width, vector_math_012.height = 140.0, 100.0
-    raycast.width, raycast.height = 150.0, 100.0
-    frame_002_1.width, frame_002_1.height = 150.0, 100.0
-    vector_math_017.width, vector_math_017.height = 140.0, 100.0
-    gradient_texture_001.width, gradient_texture_001.height = 140.0, 100.0
-    position_002_1.width, position_002_1.height = 140.0, 100.0
-    vector_math_019.width, vector_math_019.height = 140.0, 100.0
-    set_position_001_1.width, set_position_001_1.height = 140.0, 100.0
-    position_003.width, position_003.height = 140.0, 100.0
-    combine_xyz_1.width, combine_xyz_1.height = 140.0, 100.0
-    math_3.width, math_3.height = 140.0, 100.0
-    frame_2.width, frame_2.height = 150.0, 100.0
-    reroute_001_1.width, reroute_001_1.height = 140.0, 100.0
-    vector_math_002_1.width, vector_math_002_1.height = 140.0, 100.0
-    vector_math_021.width, vector_math_021.height = 140.0, 100.0
-    separate_xyz_1.width, separate_xyz_1.height = 140.0, 100.0
-    vector_math_023.width, vector_math_023.height = 140.0, 100.0
-    frame_001_2.width, frame_001_2.height = 150.0, 100.0
-    reroute_003_2.width, reroute_003_2.height = 140.0, 100.0
-    compare_1.width, compare_1.height = 140.0, 100.0
-    math_001_3.width, math_001_3.height = 140.0, 100.0
-    integer_012.width, integer_012.height = 140.0, 100.0
-    reroute_005_1.width, reroute_005_1.height = 140.0, 100.0
-    float_to_integer_1.width, float_to_integer_1.height = 140.0, 100.0
-    transform_geometry_001_1.width, transform_geometry_001_1.height = 140.0, 100.0
-    attribute_statistic_001.width, attribute_statistic_001.height = 140.0, 100.0
-    position_004_1.width, position_004_1.height = 140.0, 100.0
-    reroute_007.width, reroute_007.height = 140.0, 100.0
-    vector_math_028.width, vector_math_028.height = 140.0, 100.0
-    frame_003_2.width, frame_003_2.height = 150.0, 100.0
-    reroute_008.width, reroute_008.height = 140.0, 100.0
-    reroute_006_1.width, reroute_006_1.height = 140.0, 100.0
-    reroute_004_1.width, reroute_004_1.height = 140.0, 100.0
-    noise_texture_009.width, noise_texture_009.height = 140.0, 100.0
-    group_013_1.width, group_013_1.height = 140.0, 100.0
-    reroute_009.width, reroute_009.height = 140.0, 100.0
-    group_2.width, group_2.height = 140.0, 100.0
-    group_014_1.width, group_014_1.height = 140.0, 100.0
-    group_015.width, group_015.height = 140.0, 100.0
-    group_016.width, group_016.height = 140.0, 100.0
-    frame_004_1.width, frame_004_1.height = 150.0, 100.0
-    noise_texture_010.width, noise_texture_010.height = 140.0, 100.0
-    group_017.width, group_017.height = 140.0, 100.0
-    reroute_010_1.width, reroute_010_1.height = 140.0, 100.0
-    group_018.width, group_018.height = 140.0, 100.0
-    group_020.width, group_020.height = 140.0, 100.0
-    group_021.width, group_021.height = 140.0, 100.0
-    frame_005_1.width, frame_005_1.height = 150.0, 100.0
-    noise_texture_011_1.width, noise_texture_011_1.height = 140.0, 100.0
-    group_019_1.width, group_019_1.height = 140.0, 100.0
-    reroute_011.width, reroute_011.height = 140.0, 100.0
-    group_022_1.width, group_022_1.height = 140.0, 100.0
-    group_023_1.width, group_023_1.height = 140.0, 100.0
-    group_024_1.width, group_024_1.height = 140.0, 100.0
-    frame_006.width, frame_006.height = 150.0, 100.0
-    group_026.width, group_026.height = 140.0, 100.0
-    set_position_005.width, set_position_005.height = 140.0, 100.0
-    math_002_2.width, math_002_2.height = 140.0, 100.0
-    math_003_2.width, math_003_2.height = 140.0, 100.0
-    combine_xyz_002.width, combine_xyz_002.height = 140.0, 100.0
-    vector.width, vector.height = 140.0, 100.0
-    transform_geometry_1.width, transform_geometry_1.height = 140.0, 100.0
-    float_curve_1.width, float_curve_1.height = 240.0, 100.0
-    reroute_1.width, reroute_1.height = 140.0, 100.0
-    frame_007.width, frame_007.height = 150.0, 100.0
-    reroute_012_1.width, reroute_012_1.height = 140.0, 100.0
-    transform_geometry_002_1.width, transform_geometry_002_1.height = 140.0, 100.0
-    attribute_statistic_002.width, attribute_statistic_002.height = 140.0, 100.0
-    position_005.width, position_005.height = 140.0, 100.0
-    reroute_013_1.width, reroute_013_1.height = 140.0, 100.0
-    vector_math_030.width, vector_math_030.height = 140.0, 100.0
-    frame_008.width, frame_008.height = 150.0, 100.0
-    separate_xyz_001_1.width, separate_xyz_001_1.height = 140.0, 100.0
-    math_006_1.width, math_006_1.height = 140.0, 100.0
-    math_009.width, math_009.height = 140.0, 100.0
-    math_010_1.width, math_010_1.height = 140.0, 100.0
-    math_011.width, math_011.height = 140.0, 100.0
-    mix.width, mix.height = 140.0, 100.0
-    math_007_1.width, math_007_1.height = 140.0, 100.0
-    reroute_002_2.width, reroute_002_2.height = 140.0, 100.0
-    reroute_014.width, reroute_014.height = 140.0, 100.0
-    reroute_015_1.width, reroute_015_1.height = 140.0, 100.0
-    group_002_1.width, group_002_1.height = 140.0, 100.0
-    group_003_1.width, group_003_1.height = 140.0, 100.0
-    group_004_1.width, group_004_1.height = 140.0, 100.0
-    group_005_1.width, group_005_1.height = 140.0, 100.0
-    reroute_016.width, reroute_016.height = 140.0, 100.0
-    group_001_1.width, group_001_1.height = 140.0, 100.0
-    distribute_points_on_faces.width, distribute_points_on_faces.height = 170.0, 100.0
-    repeat_input.width, repeat_input.height = 140.0, 100.0
-    repeat_output.width, repeat_output.height = 140.0, 100.0
-    math_004_2.width, math_004_2.height = 140.0, 100.0
-    domain_size.width, domain_size.height = 140.0, 100.0
-    join_geometry_001.width, join_geometry_001.height = 140.0, 100.0
-    join_geometry.width, join_geometry.height = 140.0, 100.0
-    sample_index.width, sample_index.height = 140.0, 100.0
-    position_1.width, position_1.height = 140.0, 100.0
-    transform_geometry_003_1.width, transform_geometry_003_1.height = 140.0, 100.0
-    group_006_1.width, group_006_1.height = 140.0, 100.0
-    float_to_integer_002.width, float_to_integer_002.height = 140.0, 100.0
-    math_005_2.width, math_005_2.height = 140.0, 100.0
-    reroute_018_1.width, reroute_018_1.height = 140.0, 100.0
-    reroute_019_1.width, reroute_019_1.height = 140.0, 100.0
-    group_007_1.width, group_007_1.height = 140.0, 100.0
-    float_curve_001.width, float_curve_001.height = 240.0, 100.0
-    delete_geometry_1.width, delete_geometry_1.height = 140.0, 100.0
-    position_001_1.width, position_001_1.height = 140.0, 100.0
-    compare_001_1.width, compare_001_1.height = 140.0, 100.0
-    separate_xyz_002_1.width, separate_xyz_002_1.height = 140.0, 100.0
-    compare_002.width, compare_002.height = 140.0, 100.0
-    math_008_1.width, math_008_1.height = 140.0, 100.0
-    math_012.width, math_012.height = 140.0, 100.0
-    boolean_math_1.width, boolean_math_1.height = 140.0, 100.0
-    separate_xyz_003_1.width, separate_xyz_003_1.height = 140.0, 100.0
-    math_013.width, math_013.height = 140.0, 100.0
-    math_014.width, math_014.height = 140.0, 100.0
-    vector_math_1.width, vector_math_1.height = 140.0, 100.0
-    frame_010.width, frame_010.height = 150.0, 100.0
-    frame_011.width, frame_011.height = 150.0, 100.0
-    frame_012.width, frame_012.height = 150.0, 100.0
-    frame_013.width, frame_013.height = 150.0, 100.0
-    frame_014.width, frame_014.height = 150.0, 100.0
-    frame_015.width, frame_015.height = 150.0, 100.0
-    math_016.width, math_016.height = 140.0, 100.0
-    position_006.width, position_006.height = 140.0, 100.0
-    math_017.width, math_017.height = 140.0, 100.0
-    vector_math_001_1.width, vector_math_001_1.height = 140.0, 100.0
-    math_018.width, math_018.height = 140.0, 100.0
-    math_019.width, math_019.height = 140.0, 100.0
-    set_position_1.width, set_position_1.height = 140.0, 100.0
-    math_020.width, math_020.height = 140.0, 100.0
-    math_021.width, math_021.height = 140.0, 100.0
-    compare_003.width, compare_003.height = 140.0, 100.0
-    group_008_1.width, group_008_1.height = 140.0, 100.0
-    math_022.width, math_022.height = 140.0, 100.0
-    group_009_1.width, group_009_1.height = 140.0, 100.0
-    distribute_points_on_faces_001.width, distribute_points_on_faces_001.height = 170.0, 100.0
-    random_value_1.width, random_value_1.height = 140.0, 100.0
-    sample_index_001.width, sample_index_001.height = 140.0, 100.0
-    sample_nearest.width, sample_nearest.height = 140.0, 100.0
-    sample_index_002.width, sample_index_002.height = 140.0, 100.0
-    sample_nearest_001.width, sample_nearest_001.height = 140.0, 100.0
-    mix_001.width, mix_001.height = 140.0, 100.0
-    combine_xyz_003.width, combine_xyz_003.height = 140.0, 100.0
-    separate_xyz_004.width, separate_xyz_004.height = 140.0, 100.0
-    combine_xyz_004.width, combine_xyz_004.height = 140.0, 100.0
-    separate_xyz_005.width, separate_xyz_005.height = 140.0, 100.0
-    math_023.width, math_023.height = 140.0, 100.0
-    vector_math_003_1.width, vector_math_003_1.height = 140.0, 100.0
-    sample_index_003.width, sample_index_003.height = 140.0, 100.0
-    string.width, string.height = 140.0, 100.0
-    reroute_017_1.width, reroute_017_1.height = 140.0, 100.0
-    reroute_020_1.width, reroute_020_1.height = 140.0, 100.0
-    reroute_021_1.width, reroute_021_1.height = 140.0, 100.0
-    reroute_022_1.width, reroute_022_1.height = 140.0, 100.0
-    reroute_023.width, reroute_023.height = 140.0, 100.0
-    store_named_attribute.width, store_named_attribute.height = 140.0, 100.0
-    store_named_attribute_001.width, store_named_attribute_001.height = 140.0, 100.0
-    named_attribute.width, named_attribute.height = 140.0, 100.0
-    named_attribute_001.width, named_attribute_001.height = 140.0, 100.0
-    string_001.width, string_001.height = 140.0, 100.0
-    float_curve_002.width, float_curve_002.height = 240.0, 100.0
-    reroute_025.width, reroute_025.height = 140.0, 100.0
-    reroute_026.width, reroute_026.height = 140.0, 100.0
-    position_007.width, position_007.height = 140.0, 100.0
-    vector_math_004_1.width, vector_math_004_1.height = 140.0, 100.0
-    reroute_027.width, reroute_027.height = 140.0, 100.0
-    math_024.width, math_024.height = 140.0, 100.0
-    math_025.width, math_025.height = 140.0, 100.0
-    frame_016.width, frame_016.height = 150.0, 100.0
-    frame_017.width, frame_017.height = 150.0, 100.0
-    reroute_028.width, reroute_028.height = 140.0, 100.0
-    reroute_031.width, reroute_031.height = 140.0, 100.0
-    reroute_033.width, reroute_033.height = 140.0, 100.0
-    reroute_032.width, reroute_032.height = 140.0, 100.0
-    reroute_029.width, reroute_029.height = 140.0, 100.0
-    reroute_030.width, reroute_030.height = 140.0, 100.0
-    frame_009.width, frame_009.height = 150.0, 100.0
-    frame_018.width, frame_018.height = 150.0, 100.0
-    reroute_024.width, reroute_024.height = 140.0, 100.0
-    frame_019.width, frame_019.height = 150.0, 100.0
-    reroute_035.width, reroute_035.height = 140.0, 100.0
-    boolean_math_001.width, boolean_math_001.height = 140.0, 100.0
-    combine_xyz_005.width, combine_xyz_005.height = 140.0, 100.0
-    vector_math_005.width, vector_math_005.height = 140.0, 100.0
-    compare_004.width, compare_004.height = 140.0, 100.0
-    reroute_034.width, reroute_034.height = 140.0, 100.0
-    mix_002.width, mix_002.height = 140.0, 100.0
-    math_026.width, math_026.height = 140.0, 100.0
-    group_010_1.width, group_010_1.height = 140.0, 100.0
-    math_027.width, math_027.height = 140.0, 100.0
-    frame_020.width, frame_020.height = 150.0, 100.0
-    math_028.width, math_028.height = 140.0, 100.0
-    group_011_1.width, group_011_1.height = 140.0, 100.0
-    reroute_036.width, reroute_036.height = 140.0, 100.0
-    math_029.width, math_029.height = 140.0, 100.0
-    attribute_statistic_1.width, attribute_statistic_1.height = 140.0, 100.0
-    position_008.width, position_008.height = 140.0, 100.0
-    separate_xyz_006.width, separate_xyz_006.height = 140.0, 100.0
-    combine_xyz_006.width, combine_xyz_006.height = 140.0, 100.0
-    transform_geometry_004.width, transform_geometry_004.height = 140.0, 100.0
-    vector_math_006.width, vector_math_006.height = 140.0, 100.0
-    group_012_1.width, group_012_1.height = 140.0, 100.0
-    math_015.width, math_015.height = 140.0, 100.0
-    reroute_040.width, reroute_040.height = 140.0, 100.0
-    reroute_038.width, reroute_038.height = 140.0, 100.0
-    math_030.width, math_030.height = 140.0, 100.0
-    float_to_integer_001.width, float_to_integer_001.height = 140.0, 100.0
-    mesh_boolean_1.width, mesh_boolean_1.height = 140.0, 100.0
-    switch_2.width, switch_2.height = 140.0, 100.0
-    reroute_037.width, reroute_037.height = 140.0, 100.0
-    reroute_039.width, reroute_039.height = 140.0, 100.0
-    reroute_041.width, reroute_041.height = 140.0, 100.0
-    value.width, value.height = 140.0, 100.0
-    reroute_042.width, reroute_042.height = 140.0, 100.0
-    reroute_043.width, reroute_043.height = 140.0, 100.0
+    grid.parent = frame_001_2
+    vector_math_012.parent = frame_002_1
+    raycast.parent = frame_002_1
+    frame_002_1.parent = frame_017
+    vector_math_017.parent = frame_2
+    gradient_texture_001.parent = frame_2
+    position_002_1.parent = frame_2
+    vector_math_019.parent = frame_2
+    set_position_001_1.parent = frame_2
+    position_003.parent = frame_2
+    combine_xyz_1.parent = frame_2
+    math_3.parent = frame_2
+    reroute_001_1.parent = frame_002_1
+    vector_math_002_1.parent = frame_001_2
+    vector_math_021.parent = frame_001_2
+    separate_xyz_1.parent = frame_001_2
+    vector_math_023.parent = frame_001_2
+    frame_001_2.parent = frame_017
+    reroute_003_2.parent = frame_2
+    compare_1.parent = frame_2
+    transform_geometry_001_1.parent = frame_003_2
+    attribute_statistic_001.parent = frame_003_2
+    position_004_1.parent = frame_003_2
+    reroute_007.parent = frame_003_2
+    vector_math_028.parent = frame_003_2
+    frame_003_2.parent = frame_017
+    noise_texture_009.parent = frame_004_1
+    group_013_1.parent = frame_004_1
+    reroute_009.parent = frame_004_1
+    group_2.parent = frame_004_1
+    group_014_1.parent = frame_004_1
+    group_015.parent = frame_004_1
+    group_016.parent = frame_004_1
+    frame_004_1.parent = frame_007
+    noise_texture_010.parent = frame_005_1
+    group_017.parent = frame_005_1
+    reroute_010_1.parent = frame_005_1
+    group_018.parent = frame_005_1
+    group_020.parent = frame_005_1
+    group_021.parent = frame_005_1
+    frame_005_1.parent = frame_007
+    noise_texture_011_1.parent = frame_006
+    group_019_1.parent = frame_006
+    reroute_011.parent = frame_006
+    group_022_1.parent = frame_006
+    group_023_1.parent = frame_006
+    group_024_1.parent = frame_006
+    frame_006.parent = frame_007
+    group_026.parent = frame_005_1
+    set_position_005.parent = frame_007
+    math_002_2.parent = frame_004_1
+    math_003_2.parent = frame_005_1
+    combine_xyz_002.parent = frame_007
+    vector.parent = frame_002_1
+    transform_geometry_1.parent = frame_002_1
+    float_curve_1.parent = frame_2
+    reroute_1.parent = frame_003_2
+    frame_007.parent = frame_017
+    reroute_012_1.parent = frame_007
+    transform_geometry_002_1.parent = frame_008
+    attribute_statistic_002.parent = frame_008
+    position_005.parent = frame_008
+    reroute_013_1.parent = frame_008
+    vector_math_030.parent = frame_008
+    frame_008.parent = frame_017
+    separate_xyz_001_1.parent = frame_019
+    math_006_1.parent = frame_019
+    math_009.parent = frame_001_2
+    math_010_1.parent = frame_001_2
+    math_011.parent = frame_001_2
+    mix.parent = frame_019
+    math_007_1.parent = frame_014
+    reroute_002_2.parent = frame_016
+    reroute_015_1.parent = frame_006
+    group_002_1.parent = frame_015
+    group_003_1.parent = frame_019
+    group_004_1.parent = frame_014
+    group_005_1.parent = frame_014
+    reroute_016.parent = frame_016
+    group_001_1.parent = frame_011
+    distribute_points_on_faces.parent = frame_010
+    repeat_input.parent = frame_011
+    repeat_output.parent = frame_011
+    math_004_2.parent = frame_011
+    domain_size.parent = frame_010
+    join_geometry_001.parent = frame_011
+    join_geometry.parent = frame_011
+    sample_index.parent = frame_011
+    position_1.parent = frame_011
+    transform_geometry_003_1.parent = frame_011
+    group_006_1.parent = frame_011
+    float_to_integer_002.parent = frame_011
+    math_005_2.parent = frame_011
+    reroute_018_1.parent = frame_011
+    reroute_019_1.parent = frame_011
+    group_007_1.parent = frame_011
+    float_curve_001.parent = frame_018
+    delete_geometry_1.parent = frame_010
+    position_001_1.parent = frame_010
+    compare_001_1.parent = frame_010
+    separate_xyz_002_1.parent = frame_010
+    compare_002.parent = frame_010
+    math_008_1.parent = frame_010
+    math_012.parent = frame_010
+    boolean_math_1.parent = frame_010
+    separate_xyz_003_1.parent = frame_010
+    math_013.parent = frame_010
+    math_014.parent = frame_010
+    vector_math_1.parent = frame_011
+    frame_010.parent = frame_011
+    frame_012.parent = frame_016
+    frame_013.parent = frame_016
+    frame_014.parent = frame_016
+    frame_015.parent = frame_016
+    math_016.parent = frame_015
+    position_006.parent = frame_012
+    math_017.parent = frame_012
+    vector_math_001_1.parent = frame_012
+    math_018.parent = frame_012
+    math_019.parent = frame_012
+    set_position_1.parent = frame_014
+    math_020.parent = frame_014
+    math_021.parent = frame_014
+    compare_003.parent = frame_014
+    group_008_1.parent = frame_013
+    math_022.parent = frame_013
+    group_009_1.parent = frame_013
+    distribute_points_on_faces_001.parent = frame_015
+    random_value_1.parent = frame_015
+    sample_index_001.parent = frame_012
+    sample_nearest.parent = frame_012
+    sample_index_002.parent = frame_015
+    sample_nearest_001.parent = frame_015
+    mix_001.parent = frame_014
+    combine_xyz_003.parent = frame_012
+    separate_xyz_004.parent = frame_012
+    combine_xyz_004.parent = frame_012
+    separate_xyz_005.parent = frame_012
+    math_023.parent = frame_015
+    vector_math_003_1.parent = frame_014
+    sample_index_003.parent = frame_015
+    string.parent = frame_015
+    reroute_017_1.parent = frame_012
+    reroute_020_1.parent = frame_012
+    reroute_021_1.parent = frame_016
+    reroute_022_1.parent = frame_014
+    reroute_023.parent = frame_016
+    store_named_attribute.parent = frame_015
+    store_named_attribute_001.parent = frame_015
+    named_attribute.parent = frame_015
+    named_attribute_001.parent = frame_015
+    string_001.parent = frame_015
+    float_curve_002.parent = frame_009
+    reroute_025.parent = frame_013
+    reroute_026.parent = frame_013
+    position_007.parent = frame_014
+    vector_math_004_1.parent = frame_014
+    reroute_027.parent = frame_013
+    math_024.parent = frame_014
+    math_025.parent = frame_014
+    reroute_028.parent = frame_016
+    reroute_033.parent = frame_010
+    reroute_032.parent = frame_010
+    reroute_029.parent = frame_016
+    reroute_030.parent = frame_016
+    frame_009.parent = frame_015
+    frame_018.parent = frame_011
+    reroute_024.parent = frame_016
+    frame_019.parent = frame_016
+    reroute_035.parent = frame_014
+    boolean_math_001.parent = frame_010
+    combine_xyz_005.parent = frame_010
+    vector_math_005.parent = frame_010
+    compare_004.parent = frame_010
+    mix_002.parent = frame_020
+    math_026.parent = frame_020
+    group_010_1.parent = frame_020
+    math_027.parent = frame_020
+    frame_020.parent = frame_010
+    math_028.parent = frame_010
+    group_011_1.parent = frame_010
+    reroute_036.parent = frame_020
+    math_029.parent = frame_011
+    attribute_statistic_1.parent = frame_011
+    position_008.parent = frame_011
+    separate_xyz_006.parent = frame_011
+    combine_xyz_006.parent = frame_011
+    transform_geometry_004.parent = frame_011
+    vector_math_006.parent = frame_011
+    group_012_1.parent = frame_011
+    math_015.parent = frame_011
+    math_030.parent = frame_011
+    float_to_integer_001.parent = frame_011
+    mesh_boolean_1.parent = frame_011
+    switch_2.parent = frame_011
+    reroute_037.parent = frame_011
+    value.parent = frame_020
+    math_031.parent = frame_011
     moonsurface.links.new(set_material_1.outputs[0], group_output_4.inputs[0])
     moonsurface.links.new(set_shade_smooth_1.outputs[0], set_material_1.inputs[0])
     moonsurface.links.new(reroute_001_1.outputs[0], raycast.inputs[0])
@@ -2702,7 +2638,7 @@ def moonsurface_node_group():
     moonsurface.links.new(reroute_040.outputs[0], reroute_038.inputs[0])
     moonsurface.links.new(math_029.outputs[0], math_015.inputs[0])
     moonsurface.links.new(math_015.outputs[0], math_030.inputs[0])
-    moonsurface.links.new(math_030.outputs[0], float_to_integer_001.inputs[0])
+    moonsurface.links.new(math_031.outputs[0], float_to_integer_001.inputs[0])
     moonsurface.links.new(float_to_integer_001.outputs[0], group_001_1.inputs[1])
     moonsurface.links.new(join_geometry.outputs[0], switch_2.inputs[1])
     moonsurface.links.new(reroute_033.outputs[0], reroute_037.inputs[0])
@@ -2715,6 +2651,8 @@ def moonsurface_node_group():
     moonsurface.links.new(reroute_042.outputs[0], set_material_1.inputs[2])
     moonsurface.links.new(reroute_043.outputs[0], reroute_042.inputs[0])
     moonsurface.links.new(group_input_4.outputs[5], reroute_043.inputs[0])
+    moonsurface.links.new(join_geometry.outputs[0], viewer.inputs[0])
+    moonsurface.links.new(math_030.outputs[0], math_031.inputs[0])
     moonsurface.links.new(transform_geometry_003_1.outputs[0], join_geometry_001.inputs[0])
     moonsurface.links.new(reroute_037.outputs[0], join_geometry.inputs[0])
     moonsurface.links.new(reroute_037.outputs[0], mesh_boolean_1.inputs[1])

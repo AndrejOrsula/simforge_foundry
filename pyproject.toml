@@ -25,7 +25,7 @@ classifiers = [
 keywords = ["simulation", "procedural"]
 readme = "README.md"
 license = { text = "CC0-1.0" }
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
   #
   "simforge>=0.1,<1.0",

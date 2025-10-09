@@ -28,14 +28,21 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.21
+    rev: 0.7.22
     hooks:
       - id: mdformat
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.5.13
+    rev: 0.9.0
     hooks:
       - id: uv-lock
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.0
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
 
   - repo: https://github.com/pycqa/isort
     rev: 5.13.2
@@ -43,14 +50,7 @@ repos:
       - id: isort
         args: ["--profile", "black"]
 
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.4
-    hooks:
-      - id: ruff
-        args: [--fix]
-      - id: ruff-format
-
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.3.0
+    rev: v2.4.1
     hooks:
       - id: codespell
