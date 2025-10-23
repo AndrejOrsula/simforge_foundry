@@ -2,6 +2,7 @@ import simforge  # noqa: F401
 
 from .geometry import (
     AsteroidGeo,
+    BagRandomGeo,
     CubesatGeo,
     HoleGeo,
     MarsSurfaceGeo,
@@ -25,9 +26,11 @@ from .material import (
     SmoothMetalMat,
     SolarCellMat,
     SolarPanelMat,
+    WovenFabricMat,
 )
 from .model import (
     Asteroid,
+    BagRandom,
     Cubesat,
     MarsRock,
     MarsSurface,
@@ -40,6 +43,8 @@ __all__ = (
     "Asteroid",
     "AsteroidGeo",
     "AsteroidMat",
+    "BagRandom",
+    "BagRandomGeo",
     "BrushedChromeMat",
     "Cubesat",
     "CubesatGeo",
@@ -66,4 +71,5 @@ __all__ = (
     "SolarCellMat",
     "SolarPanelGeo",
     "SolarPanelMat",
+    "WovenFabricMat",
 )

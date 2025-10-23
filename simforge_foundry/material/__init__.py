@@ -1,3 +1,4 @@
+from .fabric import *  # noqa: F403
 from .metal import *  # noqa: F403
 from .natural import *  # noqa: F403
 from .plastic import *  # noqa: F403
